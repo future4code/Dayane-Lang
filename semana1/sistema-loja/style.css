@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    text-align: center;
+}
+
+.cabecalho {
+   color: rgb(95, 95, 95);
+   background-color: rgb(247, 179, 196);
+   margin: 0;
+   Padding: 10px;
+   font-size: 15px;
+   text-shadow: black 0px 0px 2px;
+}
+
+.textocabecalho {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(59, 57, 57);
+    margin: 0;
+    padding-bottom: 40px;
+    text-align: center;
+    text-shadow: black 0px 0px 2px;
+}
+
+form {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(35, 59, 59);
+    background-color: rgb(247, 179, 196);
+    margin: 0;
+    Padding: 50px;
+    font-size: 12px;
+    text-align: left;
+    line-height: 2.0;
+}
+
+ul {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(35, 59, 59);
+    background-color: rgb(247, 179, 196);
+    margin: 0;
+    Padding: 60px;
+    font-size: 15px;
+    text-align: left;
+    line-height: 2.0;
+}
+
+.estoque {
+    background-color:  rgb(136, 241, 241);
+    margin: 0;
+    width: 100%;
+}
+
+.botao {
+   font-family: Arial, Helvetica, sans-serif;
+   color: rgb(218, 156, 25);
+   font-size: 12px;
+   padding: 20px;
+   border-radius: 10px;
+   margin: 20px;
+}
+
+.botao:hover {
+    background-color: rgb(247, 179, 196);
+    color: rgb(218, 156, 25);
+}
+
+h1 {
+    color: rgb(145, 142, 142);
+    background-color:  rgb(247, 179, 196);
+    margin: 0;
+    Padding: 50px;
+    font-size: 60px;
+    text-shadow: rgb(80, 79, 79) 0px 0px 2px;
+ }
+
+ h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(145, 142, 142);
+    background-color: rgb(247, 179, 196);
+    margin: 0;
+    Padding: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+ 
+ h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(145, 142, 142);
+    background-color: rgb(247, 179, 196);
+    margin: 0;
+    Padding: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.lista {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(35, 59, 59);
+    background-color: rgb(152, 248, 248);
+    margin: 0;
+    Padding: 50px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.menu {
+    background-color:  rgb(247, 179, 196);
+    padding: 40px;
+}
+
+
+.rodape {
+    background-color: rgb(37, 92, 92);
+    margin: 0;
+    text-align: center;
+ }
+
+ .textorodape{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(253, 196, 234);
+    text-shadow: rgb(10, 10, 10) 0px 0px 2px;
+    padding: 20px 10px 10px;
+    background-color: rgb(32, 117, 138);
+    margin: 0;
+ }
+ 
+ .facebook{
+    width: 10px;
+    border-radius: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+ }
+ 
+ .instagram{
+   width: 10px;
+   padding-right: 10px;
+   padding-bottom: 10px;
+ }
+ 
+
+ .twitter{
+   width: 10px;
+   padding-bottom: 10px;
+ }
+
+
