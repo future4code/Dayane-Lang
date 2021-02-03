@@ -5,67 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Controle de Estoque</title>
+    <title>Lista de Produtos</title>
 </head>
 <body>
-    <div class= "cabecalho">
-        <h3>***Lujinha DaDay***</h3>
-        <img src = ".\img\logo.png" widht = " 150 " height = " 150 " />
+    <div class="cabecalho">
+        <p>***Lujinha DaDay***</p>
     </div>
     
-    <div class= "menu">
-        <a href= " index.html " > Página Inicial </a><br/>
-        <a href= " # " > Controle de Estoque </a><br/>
-        <a href= " add-produto.html "> Preço total: Adicionar Produto </a><br/>
-        <a href= " funcionarios.html " > Funcionários </a><br/>
-        <a href= "listaprodutos.html" >Lista de Produtos</a><br/>
-        <a href= "listavendas.html" >Histórico de Vendas</a><br/>
+    <div class="menu">
+        <a href="index.html" >Página Inicial</a>
+        <a href="ctrl-estoque.html" >Controle de Estoque</a>
+        <a href="add-produto.html" >Adicionar Produto</a>
+        <a href="funcionarios.html" >Funcionários</a>
+        <a href="listaprodutos.html" >Lista de Produtos</a>
+ 	    <a href="listavendas.html" >Histórico de Vendas</a>
     </div>
 
-    <h2>Controle de Estoque</h2>
+    <h2>Lista de Produtos</h2>
 
-    <table class ="estoque">
-        <tr class= "lista">
-            <th>Foto</th>
+    <table class="produtos">
+        <tr class="lista">
             <th>Descrição</th>
             <th>Preço (R$)</th>
             <th>Quantidade Disponível</th>
         </tr>
 
-        <tr class= "descricao">
+        <tr class= "itens">
             <td><img src=".\img\produto1.jpg" alt="Necessaire Gatinho" width=150 height=150/></td>
             <td> Necessaire de Gatinho </td>
             <td> R$25,00 </td>
             <td> 10 </td>
         </tr>
 
-        <tr class= "descricao">
+        <tr class= "itens">
             <td><img src=".\img\produto2.jpg" alt="Mochila de Gatinho" width=150 height=150/></td>
             <td> Mochila de Gatinho </td>
             <td> R$85,00 </td>
             <td> 03 </td>
         </tr>
 
-        <tr class= "descricao">
+        <tr class= "itens">
             <td><img src=".\img\produto3.jpg" alt="Babylook Lhama" width=150 height=150/></td>
             <td> Babylook Lhama - tam.Único </td>
             <td> R$42,00 </td>
             <td> 10 </td>
         </tr>
 
-        <tr class= "descricao">
+        <tr class= "itens">
             <td><img src=".\img\produto4.jpg" alt="Caneca Big Lhama" width=150 height=150/></td>
             <td> Caneca Big Lhama </td>
             <td> R$49,00 </td>
             <td> 03 </td>
-        </tr>
-        
-        <!-- Crie mais uma linha desta tabela abaixo \/ -->
-        <tr>
-            <td> <width=150></width><height=150></height> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
         </tr>
 
     </table>

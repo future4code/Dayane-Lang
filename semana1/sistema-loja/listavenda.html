@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Vendas</title>
+</head>
+<body>
+    <div class="cabecalho">
+        <p>***Lujinha DaDay***</p>
+    </div>
+    
+    <div class="menu">
+        <a href="index.html">Página Inicial</a>
+        <a href="ctrl-estoque.html" >Controle de Estoque</a>
+        <a href="add-produto.html"  >Adicionar Produto</a>
+        <a href="funcionarios.html" >Funcionários</a>
+        <a href="listaprodutos.html" >Lista de Produtos</a>
+	    <a href="listavendas.html"  >Histórico de Vendas</a>
+    </div>
+    
+    <h2>Consultar Venda</h2>
+    <form action="#">
+        <div>
+            <label for="hora">Horário:</label>
+            <input type="time" id="hora" name="horário">
+        </div>
+
+        <div>
+            <label for="nome">Nome do cliente:</label>
+            <input type="text" id="nome" name="cliente">
+        </div>
+        
+        <div>
+            <label for="descricao">Produto: </label>
+           <input type="txt" id="descricao" name="descrição">
+                
+        </div>
+        
+        <div>
+            <label for="quantidade">Quantidade: </label>
+            <input type="number" id="quantidade" name="quantidade">  
+        </div>
+        
+        <div>
+            <label for="preco">Preço (em R$): </label>
+            <input type="number" id="preco" name="preço">
+        </div>
+
+        <div>
+            <label for="colaborador">Vendedor(a): </label>
+            <input type="text" id="colaborador" name="vendedor">
+        </div>
+
+        <div>
+            <label for="pagamento">Forma de pagamento: Dinheiro</label>
+            <input type="checkbox" id="pagamento" name="pagamento"> -->
+            <label for="pagamento">Cartão</label>
+            <input type="checkbox" id="pagamento" name="pagamento">
+        </div>
+
+        <div class="form-add">
+            <button  class="botao" type="submit">Consultar</button>
+        </div>
+
+    </form>
+</body>
+</html>
