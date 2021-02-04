@@ -1,4 +1,4 @@
-/** 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');/** 
   *
   *  ESTILOS GERAIS 
   *
@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 h2 {
@@ -26,7 +27,7 @@ button:focus {
 }
 
 img {
-    width: 100px;
+    width: 50px;
 }
 
 div>p:first-child {
@@ -66,9 +67,12 @@ div img {
   *
   **/
 
+
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    padding: 150px 550px;
+    
 }
 
 #container-de-descricao>ol {
@@ -81,7 +85,7 @@ div img {
 
 #container-para-comprar>p {
     color: #c44f00;
-    padding: 100px 0;
+    padding: 50px 0;
     font-size: 60px;
 }
 
