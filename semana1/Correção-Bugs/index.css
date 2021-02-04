@@ -5,9 +5,9 @@
   **/
 
 * {
+    font-family : 'Roboto';
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 h2 {
@@ -32,10 +32,6 @@ img {
 
 div>p:first-child {
     display: inline;
-}
-
-div img {
-    background: black;
 }
 
 .botao-amarelo {
