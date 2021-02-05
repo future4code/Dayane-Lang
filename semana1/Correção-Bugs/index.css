@@ -68,7 +68,6 @@ div>p:first-child {
     background-color: #2274a5;
     color: white;
     padding: 150px 550px;
-    
 }
 
 #container-de-descricao>ol {
@@ -114,9 +113,22 @@ td button:active {
     color: white;
 }
 
+td button:hover {
+    background-color: #cca700;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+}
+
+.container-do-search input {
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.container-do-search img {
+    width: 22px;
 }
 
 
