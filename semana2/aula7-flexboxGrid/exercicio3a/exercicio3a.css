@@ -7,30 +7,83 @@ body {
     color: white;
 }
 
+#top-container{
+    display:flex;
+    flex-wrap: nowrap;
+}
+
 .green-background {
+    width: 100vw;
+    height: 50px;
     background-color: green;
+    display:flex;
+    justify-content:center;
+    align-items: center;
 }
 
 .yellow-background {
+    width: 100vw;
+    height: 50px;
     background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*flex-direction: column-reverse;*/
 }
 
 .pink-background {
+    height: 400px;
     background-color: fuchsia;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#middle-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .blue-background {
+    width: 50vw;
+    height: 250px;
     background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#vertical-middle-container{
+    display: flex;
+    flex-direction: column;
 }
 
 .red-background {
+    width: 25vw;
+    height: 125px;
     background-color: red;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .lightgreen-background {
+    width: 25vw;
+    height: 125px;
     background-color: lightgreen;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .purple-background {
+    width: 100vw;
+    height: 55px;
     background-color: purple;
+    display:flex;
+    flex-direction: flex-end;
+    justify-content: center;
+    align-items: center;
 }
