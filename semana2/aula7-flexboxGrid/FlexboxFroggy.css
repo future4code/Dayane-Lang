@@ -1,0 +1,99 @@
+#pond{
+    display: flex;
+    justify-content: flex-end;
+    justify-content: center;
+    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-items: center;
+    justify-content: space-around;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+#pond{
+    display: flex;
+}
+.amarelo {
+    order:3;
+}
+
+#pond{
+    display: flex;
+}
+.red {
+    order:-4;
+}
+
+#pond{
+    display: flex;
+    align-items: flex-start;
+}
+
+.amarelo {
+    align-self: flex-end;
+}
+
+#pond{
+    display: flex;
+    align-items: flex-start;
+}
+
+.amarelo {
+    order:5;
+    align-self: flex-end;
+}
+
+#pond{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#pond{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#pond{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#pond{
+    display: flex;
+    flex-wrap: wrap;
+    align-content:flex-start;
+}
+
+#pond{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+#pond{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+#pond{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: space-between;
+}
+
