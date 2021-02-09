@@ -1,0 +1,101 @@
+Body {
+    margin: 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px;
+    color: brown;
+}
+
+#home {
+    background-color: rgba(187, 11, 108, 0.158);
+    height: 5vh;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+b {
+    font-size: 32px;
+    padding-right: 70%;
+    color: rgb(160, 28, 116);
+}
+
+b {
+    font-size: 32px;
+    padding-right: 70%;
+    color: rgb(148, 21, 121);
+}
+
+
+#search {
+    width: 40px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: 1/4;
+}
+
+p {
+    text-align: center;
+    color: rgb(11, 11, 114);
+    border: 1px solid rgba(153, 23, 23, 0.5);
+    padding: 10px 5px 10px;
+    margin-right: 4.3vw;
+    margin-top: 0;
+}
+
+#videohome {
+    width: 20vw;
+    padding-top: 4vh;
+    border: 1px solid rgba(153, 23, 23, 0.5);
+ }
+
+#reproduce {
+    background-color:  rgba(160, 77, 228, 0.158);
+    height: 5vh;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+#back {
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+#title {
+    margin: 0;
+}
+
+#pagvideo {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+
+#video {
+    width: 60vw;
+    height: 60vh;
+ }
+ 
+footer {
+    background-color:   rgba(160, 77, 228, 0.158);
+    text-align: center;
+    width: 100%;
+    position:relative;
+    bottom: 0;
+}
+
+.logosocial{
+    width: 3vw;
+    margin: 0; 
+    padding: 1% 1%;
+}
