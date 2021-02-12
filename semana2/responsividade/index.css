@@ -1,0 +1,104 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;    
+}
+
+div {
+    border: 1px solid black;
+    display: grid;
+}
+
+#second-block {   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: none;
+}
+
+#third-block{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: none;
+}
+
+#black-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: none;
+}
+
+#white-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: none;
+}
+
+#first-block {
+    background-color: red;
+    height: 10vh;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+    border: none; 
+}
+
+.blue-block {
+    background-color: blue;
+    height: 15vh;
+    margin: 10px;
+    gap: 1em;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+}
+
+.yellow-block {
+    background-color: yellow;
+    height: 15vh;
+    margin: 10px;
+    gap: 1em;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+}
+
+.green-block {
+    background-color: green;
+    height: 15vh;
+    margin: 10px;
+    gap: 1em;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    height: 45vh;
+    margin: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+}
+
+.white-block {
+    background-color: white;
+    height: 15vh;
+    margin: 10px;
+    gap: 1em;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+}
+
+.white-block11 {
+    background-color: white;
+    height: 15vh;
+    margin: 10px;
+    gap: 1em;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+}
