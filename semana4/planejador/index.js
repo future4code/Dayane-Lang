@@ -1,12 +1,7 @@
 function criarTarefa() {
-    const criarTarefa = document.getElementById("tarefa")
-    const diaEscolhido = document.getElementById("dias-semana").value
-        
-    if (criarTarefa.value !== "") {
-        const listaDias = document.getElementsByClassName("diaEscolhido")
-
-        listaDias.innerHTML += `<li>${criarTarefa.value}</li>`
-        criarTarefa.value = ""
-    }
-   
+    let escolha = document.getElementById("dias-semana").value
+    let tarefa = document.getElementById("tarefa").value
+    document.getElementById(escolha).innerHTML += "<p>- " + tarefa + "</p>"
+    document.getElementById("tarefa").value = ""
+    document.getElementById("dias-semana").value = "domingo"
 }
