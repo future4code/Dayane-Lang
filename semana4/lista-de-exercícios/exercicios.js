@@ -2,7 +2,7 @@
 //let array = [0, 8, 23, 16, 10, 15, 41, 12, 13]
 
 function inverteArray(array) {
-  return array.reverse()           // implemente sua lógica aqui
+  return array.reverse();           // implemente sua lógica aqui
 }
         
 
@@ -10,15 +10,15 @@ function inverteArray(array) {
 
 function retornaNumerosParesElevadosADois (array) {
    
-   var i = 0
+   var i = 0;
    var arrayInvert = []              // implemente sua lógica aquir
    while  (i < array.length) {
       if (array[i] % 2 ==0) {
-         arrayInvert.push(Math.pow(array[i], 2))
+         arrayInvert.push(Math.pow(array[i], 2));
       }
-      i++     
+      i++ ;    
    }
-   return arrayInvert
+   return arrayInvert;
 }     
 
 
@@ -26,41 +26,37 @@ function retornaNumerosParesElevadosADois (array) {
 
 
 function retornaNumerosPares (array) {
-   var i = 0
+   var i = 0;
    var arrayInvert = []              // implemente sua lógica aquir
    while  (i < array.length) {
        if (array[i] % 2 ==0) {
-         arrayInvert.push(array[i])
+         arrayInvert.push(array[i]);
        }
-      i++     
+      i++;     
    }
-   return arrayInvert
+   return arrayInvert;
 }
 
 //Exercício 4
 //let array = [0, 8, 23, 16, 10, 15, 41, 12, 13]
 
 function retornaMaiorNumero(array) {
-   var i = 0
-   var maiorNum = 0
+   var i = 0;
+   var maiorNumero = 0;                    // implemente sua lógica aqui
     while (i < array.length) {
-       if (array[maiorNum] < array[i+1]){
-          maiorNum = i + 1
+       if (array[maiorNumero] < array[i+1]){
+          maiorNumero = i + 1;
     }
-    i++
+    i++;
    }
-   
-   return array[maiorNum]  
+   return array[maiorNumero]  
 }
    
-
-   // implemente sua lógica aqui
-
 
 //Exercício 5
 
 function retornaQuantidadeElementos (array) {
-   // implemente sua lógica aqui
+   return array.length;     // implemente sua lógica aqui
 }
 
 //Exercício 6
