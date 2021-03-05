@@ -9,9 +9,9 @@ function inverteArray(array) {
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
-   // implemente sua lógica aquir
+   
    var i = 0;
-   var arrayInvert = []
+   var arrayInvert = []              // implemente sua lógica aquir
    while  (i < array.length) {
       if (array[i] % 2 ==0) {
          arrayInvert.push(Math.pow(array[i], 2))
@@ -26,6 +26,16 @@ function retornaNumerosParesElevadosADois (array) {
 
 function retornaNumerosPares (array) {
    // implemente sua lógica aqui
+
+   var i = 0;
+   var arrayInvert = []              // implemente sua lógica aquir
+   while  (i < array.length) {
+      if (array[i] % 2 ==0) {
+         arrayInvert.push(array[i])
+      }
+      i++     
+   }
+   return arrayInvert
 }
 
 //Exercício 4
