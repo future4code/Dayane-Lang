@@ -10,7 +10,7 @@ function inverteArray(array) {
 
 function retornaNumerosParesElevadosADois (array) {
    
-   var i = 0;
+   var i = 0
    var arrayInvert = []              // implemente sua lógica aquir
    while  (i < array.length) {
       if (array[i] % 2 ==0) {
@@ -24,25 +24,38 @@ function retornaNumerosParesElevadosADois (array) {
 
 //Exercício 3
 
-function retornaNumerosPares (array) {
-   // implemente sua lógica aqui
 
-   var i = 0;
+function retornaNumerosPares (array) {
+   var i = 0
    var arrayInvert = []              // implemente sua lógica aquir
    while  (i < array.length) {
-      if (array[i] % 2 ==0) {
+       if (array[i] % 2 ==0) {
          arrayInvert.push(array[i])
-      }
+       }
       i++     
    }
    return arrayInvert
 }
 
 //Exercício 4
+//let array = [0, 8, 23, 16, 10, 15, 41, 12, 13]
 
 function retornaMaiorNumero(array) {
-   // implemente sua lógica aqui
+   var i = 0
+   var maiorNum = 0
+    while (i < array.length) {
+       if (array[maiorNum] < array[i+1]){
+          maiorNum = i + 1
+    }
+    i++
+   }
+   
+   return array[maiorNum]  
 }
+   
+
+   // implemente sua lógica aqui
+
 
 //Exercício 5
 
