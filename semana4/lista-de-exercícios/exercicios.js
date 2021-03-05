@@ -60,12 +60,12 @@ function retornaQuantidadeElementos (array) {
 //Exercício 6
 
 function retornaExpressoesBooleanas() {
-   // implemente sua lógica aqui
+   
    const bool1 = true
    const bool2 = false
    const bool3 = !bool2
    const bool4 = !bool3
-   
+                                          // implemente sua lógica aqui
    const arrBoolean = [bool1 && bool2 && !bool4,
                        (bool1 && bool2) || !bool3,
                        ((bool2 || bool3) && (bool4 || bool1)),
@@ -83,18 +83,27 @@ function retornaNNumerosPares(n) {
    let x = 0;
    let arrInvert = []
    while (x < n) {
-      arrInvert.push(0 + i);
+      arrInvert.push(0 + i);           // implemente sua lógica aqu
       i += 2;
       x++;
    }
    return arrInvert;
-   // implemente sua lógica aqui
 }
 
 // Exercício 8
 
 function checaTriangulo(a, b, c) {
-  // implemente sua lógica aqui
+  
+
+   const triangEquil = ((a == b) && (b == c));                        // implemente sua lógica aqui
+   const triangIsos = ((a != b) || (b != c)) && ((a == b) || (b == c));
+
+  if (triangEquil)
+     return "Equilátero";
+  else if (triangIsos)
+     return "Isósceles";
+  else
+     return "Escaleno";
 }
 
 // Exercício 9
