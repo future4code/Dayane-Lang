@@ -24,7 +24,6 @@ function retornaNumerosParesElevadosADois (array) {
 
 //Exercício 3
 
-
 function retornaNumerosPares (array) {
    var i = 0;
    var arrayInvert = []              // implemente sua lógica aquir
@@ -38,7 +37,6 @@ function retornaNumerosPares (array) {
 }
 
 //Exercício 4
-//let array = [0, 8, 23, 16, 10, 15, 41, 12, 13]
 
 function retornaMaiorNumero(array) {
    var i = 0;
@@ -63,7 +61,20 @@ function retornaQuantidadeElementos (array) {
 
 function retornaExpressoesBooleanas() {
    // implemente sua lógica aqui
-}
+   const bool1 = true
+   const bool2 = false
+   const bool3 = !bool2
+   const bool4 = !bool3
+   
+   const arrBoolean = [bool1 && bool2 && !bool4,
+                       (bool1 && bool2) || !bool3,
+                       ((bool2 || bool3) && (bool4 || bool1)),
+                       (!(bool2 && bool3) || !(bool1 && bool3)),
+                       (!(bool1) && !(bool3) || (!bool4 && bool3 && bool3))];
+   
+   return arrBoolean;
+}   
+
 
 //Exercício 7
 
