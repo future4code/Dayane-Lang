@@ -79,6 +79,15 @@ function retornaExpressoesBooleanas() {
 //Exercício 7
 
 function retornaNNumerosPares(n) {
+   let i = 0;
+   let x = 0;
+   let arrInvert = []
+   while (x < n) {
+      arrInvert.push(0 + i);
+      i += 2;
+      x++;
+   }
+   return arrInvert;
    // implemente sua lógica aqui
 }
 
