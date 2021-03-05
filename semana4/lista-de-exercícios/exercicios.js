@@ -9,13 +9,18 @@ function inverteArray(array) {
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
-   // implemente sua lógica aqui
-  let numero %2 = 0
-   
-   
-   
-   return array.map(function ())
-}
+   // implemente sua lógica aquir
+   var i = 0;
+   var arrayInvert = []
+   while  (i < array.length) {
+      if (array[i] % 2 ==0) {
+         arrayInvert.push(Math.pow(array[i], 2))
+      }
+      i++     
+   }
+   return arrayInvert
+}     
+
 
 //Exercício 3
 
