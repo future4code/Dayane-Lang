@@ -109,8 +109,7 @@ function checaTriangulo(a, b, c) {
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
-   // implemente sua lógica aqui
-   const maiorNum = num1 > num2 ? num1 : num2;
+   const maiorNum = num1 > num2 ? num1 : num2;    // implemente sua lógica aqui
    const menorNum = num1 < num2 ? num1 : num2;
 
    return {
@@ -124,6 +123,31 @@ function comparaDoisNumeros(num1, num2) {
 
 function segundoMaiorEMenor(array) {
    // implemente sua lógica aqui
+   let i = 0;
+   let maior = 0;
+   let bigNumber = [];
+   let MaiorMenor = [];
+
+   while (i < (array.length - 1)) {
+      if (array[maior] < array[i + 1]) {
+         bigNumber.push(array[maior]);
+         maior = i + 1;
+      } else {
+         if (bigNumber[bigNumber.length - 1] > array[i + 1]) {
+            let indice = bigNumber.splice(bigNumber.length - 1, 1)[0];
+            bigNumber.push(array[i + 1]);
+            bigNumber.push(indice);
+         } else {
+            bigNumber.push(array[i + 1]);
+         }
+      }
+      i++;
+   }
+   bigNumber.push(array[maior]);
+   MaiorMenor.push(bigNumber[bigNumber.length - 2]);
+   MaiorMenor.push(bigNumber[1]);
+
+   return MaiorMenor;
 }
 
 //Exercício 11
