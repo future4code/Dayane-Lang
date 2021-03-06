@@ -110,6 +110,14 @@ function checaTriangulo(a, b, c) {
 
 function comparaDoisNumeros(num1, num2) {
    // implemente sua lógica aqui
+   const maiorNum = num1 > num2 ? num1 : num2;
+   const menorNum = num1 < num2 ? num1 : num2;
+
+   return {
+      maiorNumero: maiorNum,
+      maiorDivisivelporMenor: maiorNum % menorNum == 0 ? true : false,
+      diferenca: maiorNum - menorNum
+   }
 }
 
 // Exercício 10
