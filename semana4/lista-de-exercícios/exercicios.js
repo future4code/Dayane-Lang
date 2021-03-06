@@ -316,7 +316,7 @@ function retornaPessoasAutorizadas(pessoas) {
       return element.idade < 60 && element.altura >= 1.5 && element.idade > 14
    }) ;
 
-   console.log(arrayNova)
+   //console.log(arrayNova)
    return arrayNova ;
 }
 
@@ -324,7 +324,12 @@ function retornaPessoasAutorizadas(pessoas) {
 // Exercício 18, letra B
 
 function retornaPessoasNaoAutorizadas(pessoas) {
-   // implemente sua lógica aqui
+     // implemente sua lógica aqui
+   const arrayNova = pessoas.filter(element => {
+         return (element.idade < 14 || element.idade > 60) || element.altura < 1.5
+      }) ;
+   return arrayNova ;
+ 
 }
 
 //Exercício 19
@@ -338,6 +343,18 @@ const consultas = [
 
 function retornaEmailConsulta(consultas) {
   // implemente sua lógica aqui
+
+   const mensagens = []
+   for (let i = 0; i < consultas.length; i++) {
+      if (consultas[i].cancelada == true) {
+         mensagens.push(`Olá, ${consultas[i].genero == "masculino" ? "Sr." : "Sra."} ${consultas[i].nome}. Estamos enviando esta mensagem para ${consultas[i].genero == "masculino" ? "lembrá-lo" : "lembrá-la"} ${consultas[i].nome} da sua consulta no dia ${consultas[i].dataDaConsulta}. Por favor, acuse o recebimento deste-email.`)
+      } else {
+         mensagens.push(`Olá, ${consultas[i].genero == "masculino" ? "Sr." : "Sra."} ${consultas[i].nome}. Infelizmente sua consulta marcada para o dia ${consultas[i].dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`);
+      }
+   }
+
+   console.log(mensagens)
+   return mensagens ;
 }
 
 //Exercício 20
