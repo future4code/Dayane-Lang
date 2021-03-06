@@ -59,7 +59,7 @@ function retornaQuantidadeElementos (array) {
 
 //Exercício 6
 
-function retornaExpressoesBooleanas() {
+/*function retornaExpressoesBooleanas() {
    
    const bool1 = true
    const bool2 = false
@@ -73,8 +73,14 @@ function retornaExpressoesBooleanas() {
                        (!(bool1) && !(bool3) || (!bool4 && bool3 && bool3))];
    
    return arrBoolean;
-}   
+}  */ 
 
+function retornaExpressoesBooleanas() {
+   // implemente sua lógica aqui
+   const respostas = [false, false, true, true, true]
+   return respostas
+
+}
 
 //Exercício 7
 
@@ -122,13 +128,12 @@ function comparaDoisNumeros(num1, num2) {
 // Exercício 10
 
 function segundoMaiorEMenor(array) {
-   // implemente sua lógica aqui
    let i = 0;
    let maior = 0;
    let bigNumber = [];
    let MaiorMenor = [];
 
-   while (i < (array.length - 1)) {
+   while (i < (array.length - 1)) {             // implemente sua lógica aqui
       if (array[maior] < array[i + 1]) {
          bigNumber.push(array[maior]);
          maior = i + 1;
@@ -154,7 +159,21 @@ function segundoMaiorEMenor(array) {
 
 function ordenaArray(array) {
    // implemente sua lógica aqui
+   const tamanho = array.length;
+
+   for (let i = 0; i < tamanho; i++) {
+      for (let y = 0; y < tamanho; y++) {
+         if (array[y] > array[y + 1]) {
+            let ordenar = array[y];
+
+            array[y] = array[y + 1];
+            array[y + 1] = ordenar;
+         }
+      }
+  }
+   return array
 }
+
 
 // Exercício 12
 
