@@ -335,11 +335,11 @@ function retornaPessoasNaoAutorizadas() {
 //Exercício 19
 
 const consultas = [
-  { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
-  { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
-  { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
-  { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
-  ]
+   { nome: "João", genero: "masculino", cancelada: false, dataDaConsulta: "01/10/2019" },
+   { nome: "Pedro", genero: "masculino", cancelada: true, dataDaConsulta: "02/10/2019" },
+   { nome: "Paula", genero: "feminino", cancelada: false, dataDaConsulta: "03/11/2019" },
+   { nome: "Márcia", genero: "feminino", cancelada: true, dataDaConsulta: "04/11/2019" }
+ ]
 
 function retornaEmailConsulta() {
   // implemente sua lógica aqui
