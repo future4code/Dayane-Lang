@@ -344,7 +344,7 @@ const consultas = [
 function retornaEmailConsulta(consultas) {
   // implemente sua lógica aqui
 
-   const mensagens = []
+   const mensagens =[]
    for (let i = 0; i < consultas.length; i++) {
       if (consultas[i].cancelada == true) {
          mensagens.push(`Olá, ${consultas[i].genero == "masculino" ? "Sr." : "Sra."} ${consultas[i].nome}. Estamos enviando esta mensagem para ${consultas[i].genero == "masculino" ? "lembrá-lo" : "lembrá-la"} ${consultas[i].nome} da sua consulta no dia ${consultas[i].dataDaConsulta}. Por favor, acuse o recebimento deste-email.`)
