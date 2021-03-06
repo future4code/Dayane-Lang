@@ -312,6 +312,12 @@ const pessoas = [
 
 function retornaPessoasAutorizadas(pessoas) {
    // implemente sua lógica aqui
+   const arrayNova = pessoas.filter(element => {
+      return element.idade < 60 && element.altura >= 1.5 && element.idade > 14
+   }) ;
+
+   console.log(arrayNova)
+   return arrayNova ;
 }
 
 
