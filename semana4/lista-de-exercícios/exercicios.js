@@ -310,20 +310,20 @@ const pessoas = [
 
 //Exercício 18, letra A
 
-function retornaPessoasAutorizadas(pessoas) {
+function retornaPessoasAutorizadas() {
    // implemente sua lógica aqui
-   const arrayNova = pessoas.filter(element => {
-      return element.idade < 60 && element.altura >= 1.5 && element.idade > 14
+   const autorizadas = pessoas.filter(autorizadas => {
+      return autorizadas.idade < 60 && autorizadas.altura >= 1.5 && autorizadas.idade > 14
    }) ;
 
    //console.log(arrayNova)
-   return arrayNova ;
+   return autorizadas ;
 }
 
 
 // Exercício 18, letra B
 
-function retornaPessoasNaoAutorizadas(pessoas) {
+function retornaPessoasNaoAutorizadas() {
      // implemente sua lógica aqui
    const arrayNova = pessoas.filter(element => {
          return (element.idade < 14 || element.idade > 60) || element.altura < 1.5
@@ -341,7 +341,7 @@ const consultas = [
   { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
   ]
 
-function retornaEmailConsulta(consultas) {
+function retornaEmailConsulta() {
   // implemente sua lógica aqui
 
    const mensagens =[]
@@ -370,4 +370,14 @@ const contas = [
 
 function atualizaSaldo() {
   // implemente sua lógica aqui
+  contas.forEach((conta) => {
+   let totalCompras = 0 ;
+
+   conta.compras.forEach((valor) => {
+      totalCompras += valor ;
+
+   })
+   conta.saldoTotal -= totalCompras ;
+})
+return contas ;
 }
