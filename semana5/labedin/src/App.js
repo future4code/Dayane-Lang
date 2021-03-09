@@ -1,7 +1,15 @@
 import React from 'react';
 import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
+import CardPequeno from './components/CardPequeno/CardPequeno';
 import ImagemButton from './components/ImagemButton/ImagemButton';
+import FotoPerfil from './imagens/dknl.jpg';
+import FotoExp from './imagens/FotoExp.jpg';
+import LogoEmail from './imagens/gmail.png';
+import LogoEndereco from './imagens/endereco.png';
+import MulherTi from './imagens/mulherinfo.jpg';
+import LogoGithub from './imagens/github.png
+import LogoLinkedin from './imagens/linkedin.png';
 
 function App() {
   return (
@@ -9,42 +17,65 @@ function App() {
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
         <CardGrande 
-          imagem="https://uploads-ssl.webflow.com/5d640f4558306be99cf47a0e/5dd57846babb597b77c6bb1d_PerfilFuture4_cor.png" 
-          nome="Astrodev" 
-          descricao="Oi, eu sou o Astrodev. Sou o chefe dos alunos da Labenu. Adoro pedir e-mails na sexta-feira e esperar os alunos responderem só para responder com uma bronca e dar mais trabalho para eles."
+          imagem={FotoPerfil}
+          nome="Dayane Lang" 
+          descricao="Oi, eu sou a Dayane Lang. Atualmente sou aluna da Labenu., 
+                    Sou detalhista e gosto dos meus códigos bem alinhados e coloridos. 
         />
         
         <ImagemButton 
-          imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
-          texto="Ver mais"
-        />
+          imagem= "https://image.flaticon.com/icons/png/512/117/117472.png "
+          texto="Ver mais " 
+        /&gt;
+
       </div>
 
       <div className="page-section-container">
+        <h2>Dados pessoais</h2>
+        <CardPequeno
+          imagem={LogoEmail} 
+          nome="Email:" 
+          descricao="estudantefulllabenu@gmail.com"
+        /> 
+
+        <CardPequeno 
+          imagem={LogoEndereco} 
+          nome="Endereço:" 
+          descricao="Rua Botafogo- Joinville/SC"
+        />
+        
+      </div>
+
+      <div className="page-section-container ">
         <h2>Experiências profissionais</h2>
         <CardGrande 
-          imagem="https://s3.amazonaws.com/future4.com.br/static/headf4-c492117ca2373dc85ca81bf715b3dc2a.png" 
-          nome="Labenu" 
-          descricao="Formando desenvolvedores para o mercado de trabalho!" 
+          imagem = {FotoExp}
+          nome="Consultoria Jurídica e analista " 
+          descricao="Estou à procura de novos desafios profissionais na área de Tecnologia e acredito que sua empresa possa ter interesse por minhas qualificações.,
+                    Sou graduada em Direito, com pós graduação / especialização em Gestão Pública e em LGPD. Atuei nas áreas Administrativa e,
+                    Jurídica há 12 anos, com destaque em assessoria a diretoria, para o desenvolvimento e coordenação das ,
+                    rotinas administrativas e jurídicas." 
         />
         
         <CardGrande 
-          imagem="https://imagens.canaltech.com.br/empresas/4418.400.jpg" 
-          nome="NASA" 
-          descricao="Apontando defeitos." 
+          imagem= {MulherTi} 
+          nome="Formação" 
+          descricao="Curso em andamento: Desenvolvimento Full Stack - LABENU ; ,
+                      Curso Compliance LGPD ; Pós-Graduação em Gestão Pública -IFSC ; ,
+                       Bacharel em Direito -FGG ; Técnico em Informática - CTI UNESP." 
         />
       </div>
 
       <div className="page-section-container">
         <h2>Minhas redes sociais</h2>
         <ImagemButton 
-          imagem="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png" 
-          texto="Facebook" 
+          imagem= {LogoGithub} 
+          texto="Github" 
         />        
 
         <ImagemButton 
-          imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png" 
-          texto="Twitter" 
+          imagem={LogoLinkedin} 
+          texto="Linkedin" 
         />        
       </div>
     </div>
