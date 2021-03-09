@@ -1,15 +1,15 @@
-import React from 'react';
-import './App.css';
-import CardGrande from './components/CardGrande/CardGrande';
-import CardPequeno from './components/CardPequeno/CardPequeno';
-import ImagemButton from './components/ImagemButton/ImagemButton';
-import FotoPerfil from './imagens/dknl.jpg';
-import FotoExp from './imagens/FotoExp.jpg';
-import LogoEmail from './imagens/gmail.png';
-import LogoEndereco from './imagens/endereco.png';
-import MulherTi from './imagens/mulherinfo.jpg';
-import LogoGithub from './imagens/github.png
-import LogoLinkedin from './imagens/linkedin.png';
+import React from 'react' ;
+import './App.css' ;
+import CardGrande from './components/CardGrande/CardGrande' ;
+import CardPequeno from './components/CardPequeno/CardPequeno' ;
+import ImagemButton from './components/ImagemButton/ImagemButton' ;
+import FotoPerfil from './imagens/dknl.jpg' ;
+import FotoExp from './imagens/FotoExp.jpg' ;
+import LogoEmail from './imagens/gmail.png' ;
+import LogoEndereco from './imagens/endereco.png' ;
+import MulherTi from './imagens/mulherinfo.jpg' ;
+import LogoGithub from './imagens/github.png' ;
+import LogoLinkedin from './imagens/linkedin.png' ;
 
 function App() {
   return (
@@ -20,17 +20,17 @@ function App() {
           imagem={FotoPerfil}
           nome="Dayane Lang" 
           descricao="Oi, eu sou a Dayane Lang. Atualmente sou aluna da Labenu., 
-                    Sou detalhista e gosto dos meus códigos bem alinhados e coloridos. 
+                    Sou detalhista e gosto dos meus códigos bem alinhados e coloridos." 
         />
         
         <ImagemButton 
-          imagem= "https://image.flaticon.com/icons/png/512/117/117472.png "
+          imagem= "https://image.flaticon.com/icons/png/512/117/117472.png"
           texto="Ver mais " 
-        /&gt;
+        />
 
-      </div>
+       </div>
 
-      <div className="page-section-container">
+      <div className="page-section-container ">
         <h2>Dados pessoais</h2>
         <CardPequeno
           imagem={LogoEmail} 
