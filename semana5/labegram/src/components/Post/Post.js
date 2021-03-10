@@ -1,5 +1,6 @@
-import React from 'react'
-import './Post.css'
+import React from 'react';
+import './Post.css';
+
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
@@ -7,41 +8,69 @@ import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
+import iconeFavBranco from '../../imagens/favoritewhite.svg'
+import iconeFavPreto from '../../imagens/favoriteblack.png'
 
 class Post extends React.Component {
   state = {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
+    marcador: false,
     numeroComentarios: 0
+   
   }
 
-  onClickCurtida = () => {
-    console.log('Curtiu!')
-  }
+//  Implementações Exercícios2 - 3
 
-  onClickComentario = () => {
+  onClickCurtida = () => {        // curtido = true ; componente renderizando
     this.setState({
-      comentando: !this.state.comentando
+      curtido: true,
+      numeroCurtidas: this.state.numeroCurtidas + 1
+    }) 
+      
+    if (this.state.numerocurtidas >= 1){
+      this.setState({
+        curtido: false,
+        numeroCurtidas: this.state.numeroCurtidas - 1
+     })
+   }
+      
+  }
+
+    onClickComentario = () => {  //componente renderizando
+      this.setState({
+      comentando: !this.state.comentando //comentando
     })
   }
 
-  aoEnviarComentario = () => {
-    this.setState({
+    aoEnviarComentario = () => {
+      this.setState({
       comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
-    })
-  }
-
+      numeroComentarios: this.state.numeroComentarios + 1   //numerocomentarios ; componente renderizando
+      })
+    }
+ 
+  /*onClickMarcador = () => {
+    
+    if (this.state.marcador) {
+        this.setState({marcador: true, callback: (iconeFavBranco) })
+       
+    } 
+        this.setState({marcador: false, callback: (iconeFavPreto) })
+  }*/
+ 
   render() {
+
     let iconeCurtida
 
-    if(this.state.curtido) {
+    if(this.state.curtido) {  //curtido
       iconeCurtida = iconeCoracaoPreto
     } else {
       iconeCurtida = iconeCoracaoBranco
     }
 
+   
     let componenteComentario
 
     if(this.state.comentando) {
@@ -58,16 +87,23 @@ class Post extends React.Component {
 
       <div className={'post-footer'}>
         <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
+          icone={iconeCurtida} //componente que está em outra pasta que assim que clicado, ele registra a ação do usuário
+          onClickIcone={this.onClickCurtida} //classe
+          valorContador={this.state.numeroCurtidas} //classe numeroCurtidas
         />
 
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
+          valorContador={this.state.numeroComentarios} //numeroComentarios
         />
+
+      <IconeComContador
+          icone={iconeFavBranco|| iconeFavPreto}
+          onClickIcone={this.state.icone}
+      />
+        
+      
       </div>
       {componenteComentario}
     </div>
