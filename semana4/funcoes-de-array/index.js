@@ -96,11 +96,17 @@ function filtrarDespesas(){
     let valorMax = Number(document.getElementById('valorFiltroMax').value)
 
 
-    let despesasFiltradas  = arrDespesas.filter((despesa) => { // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
-    if(tipoFiltro === despesa.tipo || tipoFiltro === 'todos'){
-        return true
-     }      
-    })
+        let despesasFiltradas = arrDespesas.filter((despesa) => {   // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
+            if (tipoFiltro === "todos"){
+                return item.valor >= valorMin && item.valor <= valorMax 
+            } else {
+                return item.valor >= valorMin && item.valor <= valorMax && item.tipo === tipoFiltro
+            }
+    ​
+        })
+
+
+          
 
 
     imprimirDespesas(despesasFiltradas)
