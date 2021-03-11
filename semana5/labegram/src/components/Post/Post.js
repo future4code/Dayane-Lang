@@ -92,13 +92,13 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
 
-    let iconeMarcado
+    let iconeMarcador
 
     if(this.state.marcador) {
-      iconeMarcado = iconeFavPreto
+      iconeMarcador = iconeFavPreto
 
     } else {
-      iconeMarcado = iconeFavBranco
+      iconeMarcador = iconeFavBranco
 
     }
    
@@ -143,8 +143,8 @@ class Post extends React.Component {
         />
         
         <IconeMarcador 
-          icone={iconeMarcado}
-          onClickIcone={this.onClickMarcado}
+          icone={iconeMarcador}
+          onClickIcone={this.onClickMarcador}
         />
         
       
