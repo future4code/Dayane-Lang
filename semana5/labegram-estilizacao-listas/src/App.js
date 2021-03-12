@@ -82,6 +82,8 @@ class App extends React.Component {
       )
     })
 
+    //<img className={'post-photo'} src={this.props.fotoPost} alt={'Imagem do post'}/>
+
     return (
       <div className={'app-container'}>
         <InputPost 
