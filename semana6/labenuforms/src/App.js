@@ -1,20 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import './App.css';
 import Etapa1 from './components/Etapa1';
 import Etapa2 from './components/Etapa2';
 import Etapa3 from './components/Etapa3';
 import EtapaFinal from './components/EtapaFinal';
 
-/*import styled from 'styled-components'
 
-const button = styled.button `
-background: transparent;
+const ButtonProxima = styled.button `
+  background: transparent;
+  margin: 15px;
   border-radius: 3px;
   border: 2px solid palevioletred;
   color: palevioletred;
-  margin: 0 1em;
   padding: 0.25em 1em;
-`*/
+`
 
 class App extends React.Component {
   state = {
@@ -48,7 +48,7 @@ class App extends React.Component {
 
       <div className = "App">
         {renderizaEtapa()}
-        {this.state.etapa !== 4 && <button onClick={this.onClickProximaEtapa}>Próxima Etapa</button>}
+        {this.state.etapa !== 4 && <ButtonProxima onClick={this.onClickProximaEtapa}>Próxima Etapa</ButtonProxima>}
        
       </div>
     );
@@ -56,4 +56,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default App;

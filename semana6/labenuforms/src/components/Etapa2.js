@@ -32,7 +32,7 @@ class Etapa2 extends React.Component {
                     onChange ={this.onChangeInputEnsino}
                     value={this.state.valorInputEnsino}
                 />
-
+           
             </divdiv>
         )
     }

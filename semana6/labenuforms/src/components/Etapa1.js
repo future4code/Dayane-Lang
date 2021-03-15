@@ -52,7 +52,7 @@ class Etapa1 extends React.Component {
                         <option value="superior-incompleto">Superior Incompleto</option>
                         <option value="superior-completo">Superior Completo</option>
                     </select>
-
+             
             </div>
         );
     }
