@@ -17,8 +17,36 @@ const FormContainer = div.styled `
     grid-template-columns: 1fr;
     align-items: flex-start;
 `
+const InputName = styled.label`
+  margin-bottom: 5px;
+  margin-top: 5px;
+`;
 
-const InputContainer = label.styled
+const InputEmail = styled.label`
+  margin-bottom: 8px;
+  margin-top: 10px;
+`;
+
+const BotaoSalvar = styled.button`
+  width: 15vw;
+  padding: 3px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  background-color: rgba(45, 209, 45, 0.37);
+  color: whitesmoke;
+  border-radius: 10px;
+  font-size: 14px;
+`;
+
+const BotaoMudaPagina = styled.button`
+  width: 20vw;
+  padding: 3px 5px;
+  margin-bottom: 15px;
+  background-color:   rgba(228, 207, 26, 0.37);
+  color: whitesmoke;
+  border-radius: 10px;
+  font-size: 14px;
+`;
 
 
 class CadastroUsuario extends React.Component {
@@ -51,75 +79,34 @@ class CadastroUsuario extends React.Component {
     })
   };
 
-    onChangeNameValue = (event) => {
-        this.setState({nameValue: event.target.value});
+    onChangeNameUser = (event) => {
+        this.setState({nameUser: event.target.value});
     };
     
-    onChangeEmailValue = (event) => {
-        this.setState({emailValue: event.target.value})
+    onChangeEmailUser = (event) => {
+        this.setState({emailUser: event.target.value})
     };
 
     render() {
         return (
-
-
-
-
+            <FormContainer>
+                <InputName>Nome:</InputName>
+                <input
+                value={this.state.nameUser}
+                onChange={this.onChangeNameUser}
+                placeholder='Digite seu nome'/>
+                <InputEmail>E-mail:</InputEmail>
+              <input
+                value={this.state.emailUser}
+                onChange={this.onChangeEmailUser}
+                placeholder='Digite seu e-mail'/>
+              <BotaoSalvar onClick={this.criarNovoUsuario}>Salvar</BotaoSalvar>
+              <BotaoMudaPagina onClick={this.props.trocaPagina}>Ir para página de lista</BotaoMudaPagina>
+            </FormContainer>
         )
     }
 
-  }
-    
-
-  }
-}  
-
-
-
-
-
-
-
-
-export defaut CadastroUsuario;
-
-.then((resposta) => {
-    alert("Usuário cadastrado!");
-    this.setState({ nameValue: "", emailValue: ""});
-  })
-  .catch((erro) => {
-    console.log(erro.message);
-    alert("Não foi possível cadastrar usuário!")
-  })
-  };
-
-
-onChangeNameValue = (event) => {
-this.setState({nameValue: event.target.value});
-};
-
-onChangeEmailValue = (event) => {
-this.setState({emailValue: event.target.value})
-  };
-
-
-render() {
-return (
-  <FormContainer>
-    <InputContainer>Nome:</InputContainer>
-      <input
-        value={this.state.nameValue}
-        onChange={this.onChangeNameValue}
-        placeholder='Digite seu nome'/>
-        <EmailContainer>E-mail:</EmailContainer>
-      <input
-        value={this.state.emailValue}
-        onChange={this.onChangeEmailValue}
-        placeholder='Digite seu e-mail'/>
-      <BotaoSalvar onClick={this.criarNovoUsuario}>Salvar</BotaoSalvar>
-      <BotaoMudarPagina onClick={this.props.trocarPagina}>Ir para página de lista</BotaoMudarPagina>
-    </FormContainer>
-)
 }
-}
-export default Cadastro;
+ 
+export default CadastroUsuario;
+
