@@ -1,4 +1,4 @@
-import React from 'React';
+import react from 'react';
 import './App.css';
 import CadastroUsuario from './Components/CadastroUsuario';
 import DadosUsuarios from './Components/DadosUsuario';
