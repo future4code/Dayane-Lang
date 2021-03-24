@@ -2,13 +2,15 @@ import React from "react";
 import axios from "axios";
 import styled from 'styled-components';
 
-const FormContainer = div.styled `
-    font-family: Arial, Helvetica, sans-serif;
+// EXERCÍCIO 1 - TELA DE CADASTRO
+
+const FormContainer = styled.div`
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     border-radius: 20px;
     color: whitesmoke;
     text-shadow: 2px 2px 2px black;
-    //background-image: url("g");
+    background-image: url("https://i.stack.imgur.com/s17Qi.jpg");
     padding: 60px;
     width: 30vw;
     height: 40vh;
@@ -32,7 +34,7 @@ const BotaoSalvar = styled.button`
   padding: 3px;
   margin-bottom: 8px;
   margin-top: 10px;
-  background-color: rgba(45, 209, 45, 0.37);
+  background-color: rgba(89,89,171);
   color: whitesmoke;
   border-radius: 10px;
   font-size: 14px;
@@ -42,7 +44,7 @@ const BotaoMudaPagina = styled.button`
   width: 20vw;
   padding: 3px 5px;
   margin-bottom: 15px;
-  background-color:   rgba(228, 207, 26, 0.37);
+  background-color:   rgba(35,107,142);
   color: whitesmoke;
   border-radius: 10px;
   font-size: 14px;
@@ -101,7 +103,7 @@ class CadastroUsuario extends React.Component {
                 onChange={this.onChangeEmailUser}
                 placeholder='Digite seu e-mail'/>
               <BotaoSalvar onClick={this.criarNovoUsuario}>Salvar</BotaoSalvar>
-              <BotaoMudaPagina onClick={this.props.trocaPagina}>Ir para página de lista</BotaoMudaPagina>
+              <BotaoMudaPagina onClick={this.props.trocaPagina}>Página de Lista</BotaoMudaPagina>
             </FormContainer>
         )
     }

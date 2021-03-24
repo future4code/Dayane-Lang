@@ -1,10 +1,10 @@
 import react from 'react';
 import './App.css';
 import CadastroUsuario from './Components/CadastroUsuario';
-import DadosUsuarios from './Components/DadosUsuario';
-import ListaUsuarios from './Components/listaUsuarios';
+//import DadosUsuarios from './Components/DadosUsuario';
+import ListaUsuarios from './Components/ListaUsuarios';
 
-class App extends Component {
+class App extends react.Component{
   state = {
     pagina: true,
   }
