@@ -10,7 +10,7 @@ const FormContainer = styled.div`
     border-radius: 20px;
     color: whitesmoke;
     text-shadow: 2px 2px 2px black;
-    background-image: url("https://i.stack.imgur.com/s17Qi.jpg");
+    background-image: url("https://cdn.hipwallpaper.com/m/85/91/Y2KHar.jpg");
     padding: 60px;
     width: 30vw;
     height: 40vh;
@@ -19,7 +19,7 @@ const FormContainer = styled.div`
     grid-template-columns: 1fr;
     align-items: flex-start;
 `
-const InputName = styled.label`
+const InputNome = styled.label`
   margin-bottom: 5px;
   margin-top: 5px;
 `;
@@ -53,14 +53,14 @@ const BotaoMudaPagina = styled.button`
 
 class CadastroUsuario extends React.Component {
   state = {
-    nameUser: "",
-    emailUser:""
+    nomeValue: "",
+    emaiLValue:""
   }
 
-  criaNovoUsuario =() => {
+  criarNovoUsuario =() => {
     const body = {
-        name: this.setState.nameUser,
-        email: this.setState.emailUser
+        name: this.setState.nomeValue,
+        email: this.setState.emailValue
     };
 
     axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
@@ -73,7 +73,7 @@ class CadastroUsuario extends React.Component {
 
     .then((resposta) => {
         alert("Usuário Cadastrado!")
-        this.setState({ nameUser: "", emailUser:"" });
+        this.setState({ nomeValue: "", emailValue:"" });
     })
     .catch((erro) => {
         console.log(erro.message);
@@ -81,29 +81,29 @@ class CadastroUsuario extends React.Component {
     })
   };
 
-    onChangeNameUser = (event) => {
-        this.setState({nameUser: event.target.value});
+    onChangeNomeValue = (event) => {
+        this.setState({nomeValue: event.target.value});
     };
     
-    onChangeEmailUser = (event) => {
-        this.setState({emailUser: event.target.value})
+    onChangeEmailValue = (event) => {
+        this.setState({emailValue: event.target.value})
     };
 
     render() {
         return (
             <FormContainer>
-                <InputName>Nome:</InputName>
+                <InputNome>Nome:</InputNome>
                 <input
-                value={this.state.nameUser}
-                onChange={this.onChangeNameUser}
+                value={this.state.nomeValue}
+                onChange={this.onChangeNomeValue}
                 placeholder='Digite seu nome'/>
                 <InputEmail>E-mail:</InputEmail>
               <input
-                value={this.state.emailUser}
-                onChange={this.onChangeEmailUser}
+                value={this.state.emailValue}
+                onChange={this.onChangeEmailValue}
                 placeholder='Digite seu e-mail'/>
               <BotaoSalvar onClick={this.criarNovoUsuario}>Salvar</BotaoSalvar>
-              <BotaoMudaPagina onClick={this.props.trocaPagina}>Página de Lista</BotaoMudaPagina>
+              <BotaoMudaPagina onClick={this.props.trocarPaginas}>Ir-Página de Lista</BotaoMudaPagina>
             </FormContainer>
         )
     }
@@ -112,3 +112,55 @@ class CadastroUsuario extends React.Component {
  
 export default CadastroUsuario;
 
+/*export default class CreateUserPage extends React.Component {
+  state = {
+    name: "",
+    email: ""
+  };
+
+  handleName = (event) => {
+    this.setState({ name: event.target.value });
+  };
+
+  handleEmail = (event) => {
+    this.setState({ email: event.target.value });
+  };
+
+  createUser = () => {
+    const body = {
+      name: this.state.name,
+      email: this.state.email
+    };
+
+    axios
+      .post(baseUrl, body, axiosConfig)
+      .then((res) => {
+        console.log(res);
+        alert("O usuário foi criado com sucesso!");
+        this.setState({ name: "", email: "" });
+      })
+      .catch((err) => {
+        alert("Deu ruim :(");
+        console.log(err);
+      });
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>Criar usuário</h2>
+        <input
+          onChange={this.handleName}
+          value={this.state.name}
+          placeholder="Nome"
+        />
+        <input
+          onChange={this.handleEmail}
+          value={this.state.email}
+          placeholder="E-mail"
+        />
+        <button onClick={this.createUser}>Criar</button>
+      </div>
+    );
+  }
+}*/

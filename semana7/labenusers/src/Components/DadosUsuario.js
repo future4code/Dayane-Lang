@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 
 // DESAFIO 2 - Tela de detalhes do usuário:
+
 const DadosContainer = styled.div`
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
@@ -81,7 +82,9 @@ class DadosUsuario extends React.Component {
       <DadosContainer>
         <BotaoVoltarLista onClick={this.props.trocaPagina}>Voltar- Página Lista</BotaoVoltarLista>
           <div>
+
             {/* DESAFIO 4 - input para buscar usuário */}
+            
             <InputContainer>Buscar usuário:</InputContainer>
               <input 
                 type="text" 
