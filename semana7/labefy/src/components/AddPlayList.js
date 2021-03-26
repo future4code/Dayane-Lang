@@ -37,7 +37,7 @@ const ButtonViewlists = styled.button`
   color: whitesmoke;
 `;
 
-export default class AddPlaylist extends React.Component {
+class AddPlaylist extends React.Component {
   state = {
     name: ""
   };
@@ -91,4 +91,4 @@ export default class AddPlaylist extends React.Component {
   }
 }
 
-
+export default AddPlaylist;

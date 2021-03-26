@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-import {AddMusics} from "AddMusics";
+import AddMusics from "AddMusics";
 
 const ConteinerPlayLists = styled.div`
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -50,7 +50,7 @@ const axiosConfig = {
   }
 };
 
-export default class PlayLists extends React.Component {
+class PlayLists extends React.Component {
   state = {
     playlists: [],
     title: "Suas Playlists:",
@@ -158,3 +158,5 @@ export default class PlayLists extends React.Component {
     );
   }
 }
+
+export default PlayLists;

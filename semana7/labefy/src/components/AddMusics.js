@@ -53,7 +53,7 @@ const axiosConfig = {
   }
 };
 
-export default class AddMusics extends React.Component {
+class AddMusics extends React.Component {
   state = {
     playlists: [],
     playlistDetail: [],
@@ -196,3 +196,4 @@ export default class AddMusics extends React.Component {
   }
 }
 
+export default AddMusics;
