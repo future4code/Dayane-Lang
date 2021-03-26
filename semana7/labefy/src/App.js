@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {AddPlaylist} from "../src/components/AddPlayList";
+import {AddPlaylist} from "./components/AddPlayList";
 import {PlayLists} from "PlayLists";
 
 
