@@ -24,7 +24,7 @@ const ButtonAdd = styled.button`
   font-size: 16px;
   width: 10%;
   padding: 1%;
-  background-color: violetblue;
+  background-color: #400080;
   color: whitesmoke;
 `;
 
@@ -33,7 +33,7 @@ const ButtonViewlists = styled.button`
   border-radius: 10px;
   width: 10%;
   padding: 1%;
-  background-color: violetblue;
+  background-color: #400080;
   color: whitesmoke;
 `;
 

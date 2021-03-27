@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-import AddMusics from "AddMusics";
+import AddMusics from "./AddMusics";
 
 const ConteinerPlayLists = styled.div`
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -14,7 +14,7 @@ const ButtonBack = styled.button`
   width: 10%;
   padding: 10px;
   margin-bottom: 4%;
-  background-color: darkorange;
+  background-color: #400080;
   color: whitesmoke;
 `;
 
@@ -28,7 +28,7 @@ const ButtonSearch = styled.button`
   font-size: 14px;
   width: 10%;
   padding: 5.2px;
-  background-color: darkorange;
+  background-color: #400080;
   color: whitesmoke;
 `;
 
@@ -50,7 +50,7 @@ const axiosConfig = {
   }
 };
 
-class PlayLists extends React.Component {
+class Playlists extends React.Component {
   state = {
     playlists: [],
     title: "Suas Playlists:",
@@ -130,11 +130,11 @@ class PlayLists extends React.Component {
                 value={this.state.name}
                 onChange={this.handleNameChange}
               />
-              <ButtonSearch onClick={this.handleSearchPlayList}>Buscar</ButtonSearch>
+              <ButtonSearch onClick={this.handleSearchPlaylist}>Buscar</ButtonSearch>
             <ul>
               <h2>{this.state.title}</h2>
-              {this.state.PlayLists.length === 0 && <div>Processando...</div>}
-              {this.state.PlayLists.map((list) => {
+              {this.state.Playlists.length === 0 && <div>Processando...</div>}
+              {this.state.Playlists.map((list) => {
                 return (
                   <li>
                     <PlaylistsNames
@@ -159,4 +159,4 @@ class PlayLists extends React.Component {
   }
 }
 
-export default PlayLists;
+export default Playlists;

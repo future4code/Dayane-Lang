@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import AddPlaylist from "./components/AddPlayList";
-import PlayLists from "PlayLists";
+import Playlists from "./components/Playlists";
 
 
 const ConteinerApp = styled.div`
-  //background-color: rgba();
-  color: whitesmoke;
+  background-color: #ffffff;
+  color: #804040;
   margin: 0;
 `;
 
 const Headers = styled.header`
  // background-image: ;
-  color: violetblue;
+  color:#254a24;
   font-size: 30px;
   padding-bottom: 1%;
   padding-left: 5%;
@@ -30,7 +30,7 @@ const Footers = styled.footer`
   margin: 0;
 `;
 
-export default class App extends React.Component {
+class App extends React.Component {
   state = {
     primaryPage: "addPlaylist"
   };
@@ -53,7 +53,7 @@ export default class App extends React.Component {
         {this.state.primaryPage === "addPlaylist" ? (
           <AddPlaylist changePage={this.changePage} />
         ) : (
-          <PlayLists changePage={this.changePage} />
+          <Playlists changePage={this.changePage} />
         )}
         <Footers>
           
@@ -62,6 +62,10 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App;
+
+
 
 //ESTOU PENSANDO EM COLOCAR:
 
