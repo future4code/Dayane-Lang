@@ -1,28 +1,73 @@
+<<<<<<< HEAD
+import React from 'react'
+import styled from 'styled-components'
+import './styles.css'
+=======
 import React from 'react';
 import styled from 'styled-components';
 import './styles.css';
+>>>>>>> bec8f8e82470ad4e7ed97b0c425d1bf8f38ae12a
 
 const TarefaList = styled.ul`
   padding: 0;
   width: 200px;
+<<<<<<< HEAD
+`
+=======
 `;
+>>>>>>> bec8f8e82470ad4e7ed97b0c425d1bf8f38ae12a
 
 const Tarefa = styled.li`
   text-align: left;
   text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
+<<<<<<< HEAD
+`
+=======
 `;
+>>>>>>> bec8f8e82470ad4e7ed97b0c425d1bf8f38ae12a
 
 const InputsContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
+<<<<<<< HEAD
+`
+=======
 `;
+>>>>>>> bec8f8e82470ad4e7ed97b0c425d1bf8f38ae12a
 
 class App extends React.Component {
     state = {
       tarefas: [],
       inputValue: '',
       filtro: ''
+<<<<<<< HEAD
+    }
+
+  componentDidUpdate() {
+
+  };
+
+  componentDidMount() {
+
+  };
+
+  onChangeInput = (event) => {
+
+  }
+
+  criaTarefa = () => {
+
+  }
+
+  selectTarefa = (id) => {
+
+  }
+
+  onChangeFilter = (event) => {
+
+  }
+=======
     };
 
   componentDidUpdate() {
@@ -67,11 +112,21 @@ class App extends React.Component {
 
     this.setState({filtro: filtro});
   };
+>>>>>>> bec8f8e82470ad4e7ed97b0c425d1bf8f38ae12a
 
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
       switch (this.state.filtro) {
         case 'pendentes':
+<<<<<<< HEAD
+          return !tarefa.completa
+        case 'completas':
+          return tarefa.completa
+        default:
+          return true
+      }
+    })
+=======
           return !tarefa.completa;
         case 'completas':
           return tarefa.completa;
@@ -79,6 +134,7 @@ class App extends React.Component {
           return true;
       }
     });
+>>>>>>> bec8f8e82470ad4e7ed97b0c425d1bf8f38ae12a
 
     return (
       <div className="App">
@@ -110,8 +166,16 @@ class App extends React.Component {
           })}
         </TarefaList>
       </div>
+<<<<<<< HEAD
+    )
+  }
+}
+
+export default App
+=======
     );
   }
 }
 
 export default App;
+>>>>>>> bec8f8e82470ad4e7ed97b0c425d1bf8f38ae12a
