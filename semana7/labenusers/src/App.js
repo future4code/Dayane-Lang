@@ -6,29 +6,33 @@ import ListaUsuarios from './Components/ListaUsuarios';
 
 class App extends react.Component{
   state = {
-    pagina: true,
-  }
-
-  trocaPagina = () => {
-    if (this.state.pagina) {
-       this.setState({pagina: false})
-    }else {
-      this.setState({pagina: true})
-    }
-
+    pagina: "cadastroUsuario"
   };
 
+  trocarPaginas = () => {
+    if (this.state.pagina === "cadastroUsuario") {
+      this.setState({ pagina: "listaUsuarios" });
+    } else if (this.state.pagina === "listaUsuarios") {
+      this.setState({ pagina: "cadastroUsuario" });
+    }
+  };
+
+  renderizaPagina = () => {
+    switch (this.state.pagina) {
+      case "cadastroUsuario":
+        return <CadastroUsuario />;
+      case "listaUsuarios":
+        return <ListaUsuarios />;
+      default:
+        return <div></div>;
+    }
+  };
   render() {
-    const renderizaLista = () => {
-      if (this.state.pagina) {
-        return <CadastroUsuario trocaPagina={this.trocaPagina}/>
-      }else {
-        return <ListaUsuarios trocarPagina={this.trocarPagina}/>
-      }
-    };
     return (
       <div className="App">
-        {renderizaLista()}
+        <h1>Labenusers</h1>
+        <button onClick={this.changePage}>Trocar de página</button>
+        {this.renderizaPagina()}
       </div>
     );
   }
@@ -37,3 +41,21 @@ class App extends react.Component{
 export default App;
 
 
+
+
+
+
+/*render() {
+  const renderizaLista = () => {
+    if (this.state.paginaCadastro) {
+      return <CadastroUsuario trocaDePaginas={this.paginaCadastro}/>
+    }else {
+      return <ListaUsuarios trocaDePaginas={this.paginaLista}/>
+    }
+  };
+  return (
+    <div className="App">
+      {renderizaLista()}
+    </div>
+  );
+}*/
