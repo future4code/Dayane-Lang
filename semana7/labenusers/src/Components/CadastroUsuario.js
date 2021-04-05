@@ -12,8 +12,7 @@ const FormContainer = styled.div`
     border-radius: 20px;
     color: whitesmoke;
     text-shadow: 2px 2px 2px black;
-    
-    background-image: url("https://i.stack.imgur.com/s17Qi.jpg");
+    background-image: url("https://cdn.hipwallpaper.com/m/85/91/Y2KHar.jpg");
     padding: 60px;
     width: 30vw;
     height: 40vh;
@@ -21,10 +20,11 @@ const FormContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     align-items: flex-start;
-`
-/*//background-image: url("g");*/
 
-const InputName = styled.label`
+const InputNome = styled.label`
+
+//*//background-image: url("g");*//
+
   margin-bottom: 5px;
   margin-top: 5px;
 `;
@@ -39,29 +39,18 @@ const BotaoSalvar = styled.button`
   padding: 3px;
   margin-bottom: 8px;
   margin-top: 10px;
-<<<<<<< HEAD
-  background-color: rgba(45, 209, 45, 0.37);
-=======
   background-color: rgba(89,89,171);
->>>>>>> 22ce40e08501f7cf298d608c498230990b91603b
   color: whitesmoke;
   border-radius: 10px;
   font-size: 14px;
 `;
 
-<<<<<<< HEAD
-const BotaoMudarPagina = styled.button`
-  width: 20vw;
-  padding: 3px 5px;
-  margin-bottom: 15px;
-  background-color:   rgba(228, 207, 26, 0.37);
-=======
+
 const BotaoMudaPagina = styled.button`
   width: 20vw;
   padding: 3px 5px;
   margin-bottom: 15px;
   background-color:   rgba(35,107,142);
->>>>>>> 22ce40e08501f7cf298d608c498230990b91603b
   color: whitesmoke;
   border-radius: 10px;
   font-size: 14px;
@@ -70,14 +59,14 @@ const BotaoMudaPagina = styled.button`
 
 class CadastroUsuario extends React.Component {
   state = {
-    nameUser: "",
-    emailUser:""
+    nomeValue: "",
+    emaiLValue:""
   }
 
-  criaNovoUsuario =() => {
+  criarNovoUsuario =() => {
     const body = {
-        name: this.setState.nameUser,
-        email: this.setState.emailUser
+        name: this.setState.nomeValue,
+        email: this.setState.emailValue
     };
 
     axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
@@ -90,7 +79,7 @@ class CadastroUsuario extends React.Component {
 
     .then((resposta) => {
         alert("Usuário Cadastrado!")
-        this.setState({ nameUser: "", emailUser:"" });
+        this.setState({ nomeValue: "", emailValue:"" });
     })
     .catch((erro) => {
         console.log(erro.message);
@@ -98,18 +87,17 @@ class CadastroUsuario extends React.Component {
     })
   };
 
-    onChangeNameUser = (event) => {
-        this.setState({nameUser: event.target.value});
+    onChangeNomeValue = (event) => {
+        this.setState({nomeValue: event.target.value});
     };
     
-    onChangeEmailUser = (event) => {
-        this.setState({emailUser: event.target.value})
+    onChangeEmailValue = (event) => {
+        this.setState({emailValue: event.target.value})
     };
 
     render() {
         return (
             <FormContainer>
-<<<<<<< HEAD
                 <inputName>Nome:</inputName>
                 <input>
                     value={this.state.nameUser}
@@ -124,29 +112,75 @@ class CadastroUsuario extends React.Component {
                     <BotaoSalvar onclick={this.criaNovoUsuario}>Salvar</BotaoSalvar>
                     <BotaoMudarPagina onClick={this.props.trocarPagina}>Página Lista de Usuários</BotaoMudarPagina>
                 </input>
-=======
-                <InputName>Nome:</InputName>
+
                 <input
-                value={this.state.nameUser}
-                onChange={this.onChangeNameUser}
+                value={this.state.nomeValue}
+                onChange={this.onChangeNomeValue}
                 placeholder='Digite seu nome'/>
                 <InputEmail>E-mail:</InputEmail>
               <input
-                value={this.state.emailUser}
-                onChange={this.onChangeEmailUser}
+                value={this.state.emailValue}
+                onChange={this.onChangeEmailValue}
                 placeholder='Digite seu e-mail'/>
               <BotaoSalvar onClick={this.criarNovoUsuario}>Salvar</BotaoSalvar>
-              <BotaoMudaPagina onClick={this.props.trocaPagina}>Página de Lista</BotaoMudaPagina>
->>>>>>> 22ce40e08501f7cf298d608c498230990b91603b
+              <BotaoMudaPagina onClick={this.props.trocarPaginas}>Ir-Página de Lista</BotaoMudaPagina>
+
             </FormContainer>
         )
     }
 
 }
-<<<<<<< HEAD
-    
-=======
- 
->>>>>>> 22ce40e08501f7cf298d608c498230990b91603b
-export default CadastroUsuario;
 
+
+/*export default class CreateUserPage extends React.Component {
+  state = {
+    name: "",
+    email: ""
+  };
+
+  handleName = (event) => {
+    this.setState({ name: event.target.value });
+  };
+
+  handleEmail = (event) => {
+    this.setState({ email: event.target.value });
+  };
+
+  createUser = () => {
+    const body = {
+      name: this.state.name,
+      email: this.state.email
+    };
+
+    axios
+      .post(baseUrl, body, axiosConfig)
+      .then((res) => {
+        console.log(res);
+        alert("O usuário foi criado com sucesso!");
+        this.setState({ name: "", email: "" });
+      })
+      .catch((err) => {
+        alert("Deu ruim :(");
+        console.log(err);
+      });
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>Criar usuário</h2>
+        <input
+          onChange={this.handleName}
+          value={this.state.name}
+          placeholder="Nome"
+        />
+        <input
+          onChange={this.handleEmail}
+          value={this.state.email}
+          placeholder="E-mail"
+        />
+        <button onClick={this.createUser}>Criar</button>
+      </div>
+    );
+  }
+}*/
