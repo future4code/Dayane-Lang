@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import styled from 'styled-components';
 
+const FormContainer = div.styled `
+    font-family: Arial, Helvetica, sans-serif;
 // EXERCÍCIO 1 - TELA DE CADASTRO
 
 const FormContainer = styled.div`
@@ -18,8 +20,11 @@ const FormContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     align-items: flex-start;
-`
+
 const InputNome = styled.label`
+
+//*//background-image: url("g");*//
+
   margin-bottom: 5px;
   margin-top: 5px;
 `;
@@ -39,6 +44,7 @@ const BotaoSalvar = styled.button`
   border-radius: 10px;
   font-size: 14px;
 `;
+
 
 const BotaoMudaPagina = styled.button`
   width: 20vw;
@@ -92,7 +98,21 @@ class CadastroUsuario extends React.Component {
     render() {
         return (
             <FormContainer>
-                <InputNome>Nome:</InputNome>
+                <inputName>Nome:</inputName>
+                <input>
+                    value={this.state.nameUser}
+                    onChange={this.onChangeNameUser}
+                    placeholder= "Digite o seu nome de Usuário" 
+                </input>
+                <inputEmail>Email:</inputEmail>
+                <input>
+                    value={this.state.emailUser}
+                    onChange={this.onChangeEmailUser}
+                    placeholder= 'Digite o seu e-mail' 
+                    <BotaoSalvar onclick={this.criaNovoUsuario}>Salvar</BotaoSalvar>
+                    <BotaoMudarPagina onClick={this.props.trocarPagina}>Página Lista de Usuários</BotaoMudarPagina>
+                </input>
+
                 <input
                 value={this.state.nomeValue}
                 onChange={this.onChangeNomeValue}
@@ -104,13 +124,13 @@ class CadastroUsuario extends React.Component {
                 placeholder='Digite seu e-mail'/>
               <BotaoSalvar onClick={this.criarNovoUsuario}>Salvar</BotaoSalvar>
               <BotaoMudaPagina onClick={this.props.trocarPaginas}>Ir-Página de Lista</BotaoMudaPagina>
+
             </FormContainer>
         )
     }
 
 }
- 
-export default CadastroUsuario;
+
 
 /*export default class CreateUserPage extends React.Component {
   state = {
