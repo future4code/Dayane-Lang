@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { View, Text} from 'react-native-paper';
+import { select } from 'react-native-paper';
 import './App.css';
 import axios from 'axios';
 import PokeCard from './Components/PokeCard';
+
 
 function App() {
   const [pokeList, setPokeList] = useState([])
