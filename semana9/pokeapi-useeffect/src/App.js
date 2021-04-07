@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text} from 'react-native-paper';
-import { select } from 'react-native-paper';
-import './App.css';
+import Select from '@material-ui/core/Select';
 import axios from 'axios';
 import PokeCard from './Components/PokeCard';
-
 
 function App() {
   const [pokeList, setPokeList] = useState([])
@@ -26,7 +23,8 @@ function App() {
 
   return (
     <div className="App">
-      <select onChange={changePokeName}>
+   
+      <Select onChange={changePokeName}>
         <option value="">Nenhum</option>
         {pokeList.map(pokemon => {
           return (
@@ -35,10 +33,13 @@ function App() {
             </option>
           )
         })}
-      </select>
+      </Select>
       {pokeName && <PokeCard pokemon={pokeName} />}
     </div>
   );
 }
 
 export default App;
+
+
+

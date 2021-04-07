@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
 function PokeCard(props) {
   const [pokemon, setPokemon] = useState({});
 
@@ -25,7 +26,7 @@ function PokeCard(props) {
       <p>Peso: {pokemon.weight} Kg</p>
       {pokemon.types && <p>Tipo: {pokemon.types[0].type.name}</p>}
       {pokemon.sprites && (
-        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+        <img src={pokemon.sprites.front_default} alt={pokemon.name} align= 'center'/>
       )}
     </div>
   );
