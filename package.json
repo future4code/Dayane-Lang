@@ -1,0 +1,22 @@
+{
+  "name": "dayane-lang",
+  "version": "1.0.0",
+  "description": "Alunos(as), sejam bem-vindos(as)!",
+  "main": "index.js",
+  "scripts": {
+    "test": "{"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future4code/Dayane-Lang.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "\"\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/future4code/Dayane-Lang/issues"
+  },
+  "homepage": "https://github.com/future4code/Dayane-Lang#readme"
+}
