@@ -1,6 +1,6 @@
-import React from "react";
+//import React from "react";
 // eslint-disable-next-line
-import axios from "axios"; 
+//import axios from "axios"; 
 import { useState } from "react";
 import { AppConteiner } from "./Components/StyledPages/styledApp";
 import HomeScreen from "./Components/HomeScreen";

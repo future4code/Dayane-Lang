@@ -1,5 +1,6 @@
 {
     "terminal.integrated.commandsToSkipShell": [
-        "Set-ExecutionPolicy -ExecutionPolicy Bypass"
-    ]
+        "Set-ExecutionPolicy RemoteSigned"
+
+      ]
 }
