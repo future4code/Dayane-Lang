@@ -16,9 +16,9 @@ import {
   MatchName,
 } from "./StyledPages/styledMatch";
 import BackHome from "../Components/images/iconBack.png";
-import Logo from "../images/logo.jpg";
-import DeleteButton from "../images/iconblock.jpg";
-import Lottie from "react-lottie";
+import Logo from "../Components/images/logo.jpg";
+import DeleteButton from "../Components/images/iconblock.jpg";
+import * as LottiePlayer from "@lottiefiles/lottie-player";
 import animationData from "../Animation/animationHeart.json";
 
 function MatchScreen(props) {
@@ -82,7 +82,7 @@ function MatchScreen(props) {
 
         {MatchList.length === 0 ? (
           <AnimationContainer>
-            <Lottie
+            <LottiePlayer
               options={defaultOptions}
               height={300}
               width={300}

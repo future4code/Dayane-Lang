@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useEffect, useState } from "react";
@@ -19,23 +20,22 @@ import {
   Match,
 } from "./StyledPages/styledHome";
 
-import ButtonNoMatch from "./images/iconNoMatch";
-//import NoMatchEffect from '../images/reject-colorful-icon.svg';
-import ButtonMatch from "./images/iconMatch";
-//import MatchEffect from '../images/accept-colorful-icon.svg';
-import MatchList from "./images/iconfavorite.jpg";
-import Logo from '../images/logo.jpg';
-import Lottie from "react-lottie";
-//import "@lottiefiles/lottie-player";
+import ButtonNoMatch from "../Components/images/iconNoMatch.png";
+import NoMatchEffect from '../Components/images/iconblock.jpg';
+import ButtonMatch from "../Components/images/iconMatch.jpg";
+import MatchEffect from '../Components/images/iconPair.jpg';
+import MatchList from "../Components/images/iconFavorite.jpg";
+import Logo from '../Components/images/logo.jpg';
+import * as LottiePlayer from "@lottiefiles/lottie-player";
 import animationData from "../Animation/animationHeart.json";
+
 
 function HomeScreen(props) {
   const [choose, setChoose] = useState(true);
   const [noChoose, setNoChoose] = useState(true);
   const [profiles, setProfiles] = useState([]);
   const [animationState, setAnimationState] = useState({
-    isStopped: false,
-    isPaused: false,
+    isStopped: false,isPaused: false,
   });
 
   const onMouseEvent = () => {
@@ -54,9 +54,9 @@ function HomeScreen(props) {
     }
   };
 
-  const iconMatch = choose ? ButtonMatch : ButtonMatch;
+  const iconMatch = choose ? ButtonMatch : MatchEffect;
 
-  const iconNoMatch = noChoose ? ButtonNoMatch : ButtonNoMatch;
+  const iconNoMatch = noChoose ? ButtonNoMatch : NoMatchEffect;
 
   const defaultOptions = {
     loop: true,
@@ -135,7 +135,7 @@ function HomeScreen(props) {
 
         {profiles.length === 0 ? (
           <AnimationContainer>
-            <Lottie
+            <LottiePlayer
               options={defaultOptions}
               height={300}
               width={300}
