@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -17,13 +18,15 @@ import {
   NoMatch,
   Match,
 } from "./StyledPages/styledHome";
+
 import ButtonNoMatch from "./images/iconNoMatch";
 //import NoMatchEffect from '../images/reject-colorful-icon.svg';
 import ButtonMatch from "./images/iconMatch";
 //import MatchEffect from '../images/accept-colorful-icon.svg';
 import MatchList from "./images/iconfavorite.jpg";
-//import Logo from '../images/logo.svg';
+import Logo from '../images/logo.jpg';
 import Lottie from "react-lottie";
+//import "@lottiefiles/lottie-player";
 import animationData from "../Animation/animationHeart.json";
 
 function HomeScreen(props) {
@@ -51,9 +54,9 @@ function HomeScreen(props) {
     }
   };
 
-  const iconMatch = choose ? ButtonMatch : MatchEffect;
+  const iconMatch = choose ? ButtonMatch : ButtonMatch;
 
-  const iconNoMatch = noChoose ? ButtonNoMatch : NoMatchEffect;
+  const iconNoMatch = noChoose ? ButtonNoMatch : ButtonNoMatch;
 
   const defaultOptions = {
     loop: true,

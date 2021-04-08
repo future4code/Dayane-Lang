@@ -1,19 +1,22 @@
-import { useState } from 'react'
-import { AppConteiner } from './Components/StyledPages/styledApp'
-import HomeScreen from './Components/HomeScreen';
-import MatchScreen from './Components/MatchScreen';
+import { useState } from "react";
+import { AppConteiner } from "./Components/StyledPages/styledApp";
+import HomeScreen from "./Components/HomeScreen";
+import MatchScreen from "./Components/MatchScreen";
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState(true)
+  const [currentScreen, setCurrentScreen] = useState(true);
 
   const changeScreen = () => {
-    setCurrentScreen(!currentScreen)
-  }
+    setCurrentScreen(!currentScreen);
+  };
 
   return (
     <AppConteiner>
-      {currentScreen ? <HomeScreen changeScreen={changeScreen} />
-      : <MatchScreen changeScreen={changeScreen} />}       
+      {currentScreen ? (
+        <HomeScreen changeScreen={changeScreen} />
+      ) : (
+        <MatchScreen changeScreen={changeScreen} />
+      )}
     </AppConteiner>
   );
 }
