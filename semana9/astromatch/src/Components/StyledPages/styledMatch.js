@@ -39,7 +39,8 @@ export const BackButton = styled.img`
   &:hover {
     transform: scale(1.3);
   }
-  width: 9%;
+  width: 14%;
+  height: 58px;
   margin-top: 1vh;
 `;
 
@@ -48,7 +49,7 @@ export const LogoMatch = styled.img`
   height: 50px;
   padding-top: 2%;
   @media screen and (max-width: 500px) {
-    width: 145px;
+    width: 170px;
     height: 58px;
   }
 `;
@@ -58,11 +59,11 @@ export const DeleteMatch = styled.img`
   &:hover {
     transform: scale(1.3);
   }
-  width: 32px;
+  width: 35px;
   margin-top: 2%;
   margin-right: 3%;
   @media screen and (max-width: 500px) {
-    width: 31px;
+    width: 33px;
   }
 `;
 

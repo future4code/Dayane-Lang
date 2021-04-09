@@ -26,8 +26,9 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-around;
   @media screen and (max-width: 500px) {
-    width: 100px;
+    width: 170px;
     justify-content: space-between;
+    height: 58px;
   }
 `;
 
@@ -116,7 +117,7 @@ export const BioProfile = styled.p`
   margin-top: 24%;
   @media screen and (max-width: 500px) {
     font-size: 16px;
-    margin-top: 52vh;
+    margin-top: 50vh;
     width: 80vw;
     margin-left: 4%;
   }
@@ -136,7 +137,7 @@ export const NoMatch = styled.img`
   margin-top: 9%;
   margin-right: 20%;
   @media screen and (max-width: 500px) {
-    width: 14%;
+    width: 12%;
     margin-top: 10%;
   }
 `;

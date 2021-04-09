@@ -15,9 +15,9 @@ import {
   MatchImage,
   MatchName,
 } from "./StyledPages/styledMatch";
-import BackHome from "../Components/images/iconBack.png";
+import BackHome from "../Components/images/iconBack.jpg";
 import Logo from "../Components/images/logo.jpg";
-import DelMatch from "../Components/images/iconblock.jpg";
+import DelMatch from "../Components/images/clearmatch.jpg";
 //import * as LottiePlayer from "@lottiefiles/lottie-player";
 //import animationData from "../Animation/animationHeart.json";
 
