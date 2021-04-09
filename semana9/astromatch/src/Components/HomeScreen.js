@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -21,22 +22,21 @@ import {
 } from "./StyledPages/styledHome";
 
 import ButtonNoMatch from "../Components/images/iconNoMatch.png";
-import NoMatchEffect from '../Components/images/iconblock.jpg';
+import NoMatchEffect from "../Components/images/iconblock.jpg";
 import ButtonMatch from "../Components/images/iconMatch.jpg";
-import MatchEffect from '../Components/images/iconPair.jpg';
+import MatchEffect from "../Components/images/iconPair.jpg";
 import MatchList from "../Components/images/iconFavorite.jpg";
-import Logo from '../Components/images/logo.jpg';
-import * as LottiePlayer from "@lottiefiles/lottie-player";
+import Logo from "../Components/images/logo.jpg";
+//import * as LottiePlayer from "@lottiefiles/lottie-player";
 import animationData from "../Animation/animationHeart.json";
-
 
 function HomeScreen(props) {
   const [choose, setChoose] = useState(true);
   const [noChoose, setNoChoose] = useState(true);
   const [profiles, setProfiles] = useState([]);
-  const [animationState, setAnimationState] = useState({
-    isStopped: false,isPaused: false,
-  });
+  //const [animationState, setAnimationState] = useState({
+  //  isStopped: false,isPaused: false,
+  //});
 
   const onMouseEvent = () => {
     if (choose) {
@@ -58,14 +58,14 @@ function HomeScreen(props) {
 
   const iconNoMatch = noChoose ? ButtonNoMatch : NoMatchEffect;
 
-  const defaultOptions = {
+  /*const defaultOptions = {
     loop: true,
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
-  };
+  };*/
 
   useEffect(() => {
     getProfiles();
@@ -129,29 +129,17 @@ function HomeScreen(props) {
       <ContentScreen className="home">
         <Header>
           <TitleLogo src={Logo} />
-          <GoMathList src={MatchList} onClick={props.changeScreen} />
+          <GoMathList src={MatchList} onClick={() => props.changeScreen()} />
         </Header>
         <hr />
 
-        {profiles.length === 0 ? (
-          <AnimationContainer>
-            <LottiePlayer
-              options={defaultOptions}
-              height={300}
-              width={300}
-              isStopped={animationState.isStopped}
-              isPaused={animationState.isPaused}
-            />
-          </AnimationContainer>
-        ) : (
-          <ProfileConteiner key={profiles.id}>
-            <ImageProfile src={profiles.photo} />
-            <NameProfile fontSize={24}>
-              {profiles.name},<AgeProfile>{profiles.age} anos</AgeProfile>
-            </NameProfile>
-            <BioProfile>{profiles.bio}</BioProfile>
-          </ProfileConteiner>
-        )}
+        <ProfileConteiner key={profiles.id}>
+          <ImageProfile src={profiles.photo} />
+          <NameProfile fontSize={24}>
+            {profiles.name},<AgeProfile>{profiles.age} anos</AgeProfile>
+          </NameProfile>
+          <BioProfile>{profiles.bio}</BioProfile>
+        </ProfileConteiner>
 
         <Footer>
           <NoMatch

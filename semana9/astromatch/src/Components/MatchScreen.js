@@ -9,7 +9,7 @@ import {
   BackButton,
   LogoMatch,
   DeleteMatch,
-  AnimationContainer,
+  //AnimationContainer,
   MathListProfiles,
   InfoMatch,
   MatchImage,
@@ -17,16 +17,16 @@ import {
 } from "./StyledPages/styledMatch";
 import BackHome from "../Components/images/iconBack.png";
 import Logo from "../Components/images/logo.jpg";
-import DeleteButton from "../Components/images/iconblock.jpg";
-import * as LottiePlayer from "@lottiefiles/lottie-player";
-import animationData from "../Animation/animationHeart.json";
+import DelMatch from "../Components/images/iconblock.jpg";
+//import * as LottiePlayer from "@lottiefiles/lottie-player";
+//import animationData from "../Animation/animationHeart.json";
 
 function MatchScreen(props) {
   const [MatchList, setMatchList] = useState([]);
-  const [animationState, setAnimationState] = useState({
-    isStopped: false,
-    isPaused: false,
-  });
+  // const [animationState, setAnimationState] = useState({
+  //   isStopped: false,
+  //   isPaused: false,
+  // });
 
   useEffect(() => {
     getMatch();
@@ -61,26 +61,42 @@ function MatchScreen(props) {
     }
   };
 
-  const defaultOptions = {
+  /*const defaultOptions = {
     loop: true,
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
-  };
+  };*/
 
   return (
     <MatchConteiner>
       <MatchProfiles>
         <HeaderMatch>
-          <BackButton src={BackHome} onClick={props.changeScreen} />
+          <BackButton src={BackHome} onClick={() =>props.changeScreen()} />
           <LogoMatch src={Logo} />
-          <DeleteMatch src={DeleteButton} onClick={clearMatchList} />
+          <DeleteMatch src={DelMatch} onClick={clearMatchList} />
         </HeaderMatch>
         <hr />
 
-        {MatchList.length === 0 ? (
+        <MathListProfiles>
+          {MatchList.map((profile) => {
+            return (
+              <InfoMatch key={profile.id}>
+                <MatchImage src={profile.photo} />
+                <MatchName>{profile.name}</MatchName>
+              </InfoMatch>
+            );
+          })}
+        </MathListProfiles>
+      </MatchProfiles>
+    </MatchConteiner>
+  );
+}
+export default MatchScreen;
+
+/*{MatchList.length === 0 ? (
           <AnimationContainer>
             <LottiePlayer
               options={defaultOptions}
@@ -90,20 +106,5 @@ function MatchScreen(props) {
               isPaused={animationState.isPaused}
             />
           </AnimationContainer>
-        ) : (
-          <MathListProfiles>
-            {MatchList.map((profile) => {
-              return (
-                <InfoMatch key={profile.id}>
-                  <MatchImage src={profile.photo} />
-                  <MatchName>{profile.name}</MatchName>
-                </InfoMatch>
-              );
-            })}
-          </MathListProfiles>
-        )}
-      </MatchProfiles>
-    </MatchConteiner>
-  );
-}
-export default MatchScreen;
+        ) : ( 
+          <MathListProfiles>*/
