@@ -8,11 +8,11 @@ import {
   AnimationContainer,
   Message,
 } from "./style";
-import Header from "./Components/Header.js";
-import Footer from "./Components/Footer.js";
-import Logo from '../../Assets/logo.png';
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
+import Logo from "../../Assets/logo.png";
 import Lottie from "react-lottie";
-import animationData from "../../../animation/animation.json";
+import animationData from "../../Animation/Animation";
 
 function HomePage() {
   const [animationState, setAnimationState] = useState({
@@ -34,8 +34,8 @@ function HomePage() {
   return (
     <HomeContainer>
       <Header />
-      <img src={ Logo } />
-      <h1>Seja Bem Vindo(a)!</h1>
+      <img src={Logo} alt="Logo" />
+      <h1>Seja Bem Vindo(a) a nossa estação Spacial!</h1>
       <div>
         <button onClick={() => goToListTripsPage(history)}>Viagens</button>
         <button onClick={() => goToLoginPage(history)}>Login Admin</button>

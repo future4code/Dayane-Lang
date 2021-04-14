@@ -29,3 +29,4 @@ export const goToTripDetailsPage = (history) => {
 export const goToLastPage = (history) => {
     history.goBack()
 }
+

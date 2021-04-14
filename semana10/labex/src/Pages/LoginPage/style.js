@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BottomPage from '../../Router/Coordinates';
+import BottomPage from '../../Assets/logo.png';
 
 export const LoginContainer = styled.div`
     display: flex;
