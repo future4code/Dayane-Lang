@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
 import { goToAdminHomePage, goToLastPage } from '../../Router/Coordinates';
 import { LoginContainer, LoginStyleContainer, LoginInput, LoginButton } from './style';   //LoginInput e LoginButton são div´s
 import Logo from '../../Assets/logo.png';
