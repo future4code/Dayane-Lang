@@ -1,0 +1,13 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "Set-ExecutionPolicy RemoteSigned"
+
+    ],
+    "editor.gotoLocation.alternativeImplementationCommand": "Set-ExecutionPolicy RemoteSigned",
+    "files.exclude": {
+        "**/set-": true
+    },
+    "files.associations": {
+        "set-ExecutionPolicy": "Unrestricted"
+    }
+}
