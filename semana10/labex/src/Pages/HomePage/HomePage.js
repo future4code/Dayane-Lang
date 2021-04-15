@@ -12,10 +12,10 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Logo from "../../Assets/logo.png";
 import Lottie from "react-lottie";
-import animationData from "../../Animation/Animation";
+//import animationData from "../../Animation/Animation";
 
 function HomePage() {
-  const [animationState, setAnimationState] = useState({
+  /*const [animationState, setAnimationState] = useState({
     isStopped: false,
     isPaused: false,
   });
@@ -28,6 +28,16 @@ function HomePage() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+  ***Parte que deverá estar dentro do MainConteiner
+  <AnimationContainer>
+          Lottie options={defaultOptions}
+          height={250}
+          width={250}
+          isStopped={animationState.isStopped}
+          isPaused={animationState.isPaused}
+        </AnimationContainer>
+  
+  */
 
   const history = useHistory();
 
@@ -40,14 +50,8 @@ function HomePage() {
         <button onClick={() => goToListTripsPage(history)}>Viagens</button>
         <button onClick={() => goToLoginPage(history)}>Login Admin</button>
       </div>
-      <MainContainer>
-        <AnimationContainer>
-          Lottie options={defaultOptions}
-          height={250}
-          width={250}
-          isStopped={animationState.isStopped}
-          isPaused={animationState.isPaused}
-        </AnimationContainer>
+      <MainContainer> 
+        
         <Message>Embarque conosco em momentos únicos♥</Message>
       </MainContainer>
       <Footer />
