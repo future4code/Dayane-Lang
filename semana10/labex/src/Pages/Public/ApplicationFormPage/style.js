@@ -1,6 +1,6 @@
   
 import styled from 'styled-components';
-import { mainLightBlue, mainDarkGray } from '../../Components/colors';
+import { mainLightBlue, mainDarkGray } from '../../constants/colors';
 
 
 

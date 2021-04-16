@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { mainBlue, mainWhite } from "../Components/colors";
 import { Link } from "react-router-dom";
+import { mainGreen, mainLightBlue } from "../constants/colors";
 
 // Styled AdmHeader
 export const AdmHeaderContainer = styled.header`
@@ -22,7 +23,7 @@ export const AdmLogo = styled.img`
 // Styled Header
 export const HeaderContainer = styled.header`
   font-family: "Roboto", sans-serif;
-  background-color: ${mainBlue};
+  background-color: ${mainGreen};
   color: white;
   width: 100%;
   height: 15vh;
@@ -62,7 +63,7 @@ export const Menu = styled(Link)`
 
 // Styled Footer
 export const FooterContainer = styled.footer`
-  background-color: ${mainBlue};
+  background-color: ${mainLightBlue};
   color: white;
   width: 100%;
   height: 14vh;

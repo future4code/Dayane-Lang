@@ -4,6 +4,8 @@ export const mainLightBlue = '#94d1e286'
 
 export const mainRed = '#cd3131'
 
+export const mainViolet = 'violet'
+
 export const mainGreen = '#40c8ae80'
 
 export const mainDarkGreen = '#7abd7a4d'

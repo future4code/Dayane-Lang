@@ -1,5 +1,7 @@
+
 import styled from 'styled-components';
 import BottomPage from '../../Assets/logo.png';
+import { mainGreen, mainDarkGray, mainBlue } from '../../../constants/colors';
 
 export const LoginContainer = styled.div`
     display: flex;
@@ -17,14 +19,14 @@ export const LoginStyleContainer = styled.div`
     width: 100vh;
     height: 75vh;
     margin: 80px auto;
-    background-color: "#40c8ae80";
+    background-color: ${mainGreen};
     
     img {
         height: 150px;
         margin-left: 80px;
     }
     h1 {
-        color: "#40c8ae80";
+        color: ${mainDarkGray};
     }
 `
 
@@ -54,7 +56,26 @@ export const LoginButton = styled.div`
         border-bottom: 2px solid "#bc3fbc";
         cursor: pointer;
         :hover {
-            background-color:"#007fff33";
+            background-color: ${mainBlue};
         }
     }
 `
+
+/*
+import styled from 'styled-components';
+import { mainLightBlue, mainDarkGray } from '../../../constants/colors';
+import BottomPage from '../../../Assets/bottompage.png'
+
+// Styled LoginPage
+export const LoginContainer = styled.div`
+  background-color: ${mainLightBlue};
+  color: ${mainDarkGray};
+  text-align: center;
+  margin: 4% 10%;
+  padding: 10% 1%;
+`
+
+
+
+
+*/

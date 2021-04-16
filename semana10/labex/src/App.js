@@ -1,13 +1,7 @@
-  import React from 'react';
-  // import CreateTripPage from './screens/trips/CreateTripPage';
-  import Router from './Router/Router';
+import React from "react";
+import Router from "./Router/Router";
 
-
-
-  function App() {
-    return ( <
-      Router / >
-      // <CreateTripPage/> //
-    )
-  }
-  export default App;
+function App() {
+  return <Router />;
+}
+export default App;
