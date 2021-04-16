@@ -8,11 +8,11 @@ export const AdmHeaderContainer = styled.header`
   background-color: ${mainBlue};
   color: white;
   width: 100%;
-  height: 16vh;
+  height: 10vh;
 `;
 
 export const AdmLogo = styled.img`
-  width: 130px;
+  width: 100px;
   margin-left: 2%;
   margin-right: 50%;
   margin-top: 10px;
@@ -26,6 +26,18 @@ export const HeaderContainer = styled.header`
   color: white;
   width: 100%;
   height: 15vh;
+`;
+
+export const ButtonAdm = styled.img`
+  width: 10%;
+  margin-top: 3%;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.3);
+  }
+  @media screen and (max-width: 500px) {
+    width: 31px;
+  }
 `;
 
 export const Logo = styled.img`

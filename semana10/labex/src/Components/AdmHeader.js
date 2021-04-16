@@ -1,4 +1,4 @@
-/*import React from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { AdmHeaderContainer, AdmLogo} from './styled'
 import { ButtonCreateTrip, ButtonRegisterLogin, ButtonLogout } from '../constants/buttons'
@@ -39,4 +39,3 @@ const AdmHeader = () => {
     )
 }
 export default AdmHeader;
-*/

@@ -39,13 +39,13 @@ export const StyleContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid white;
     width: 100vh;
     height: 70vh;
     margin: 80px auto;
     background-color: #00000080;
     h1 {
-        color: #fff;
+      background-image: url(${ BottomPage })
     }
     
     img {

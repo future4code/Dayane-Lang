@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { goToListTripsPage, goToLoginPage } from "../../Router/Coordinates";
 import {
   HomeContainer,
+  StyleContainer,
   MainContainer,
   AnimationContainer,
   Message,
@@ -28,7 +29,7 @@ function HomePage() {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  ***Parte que deverá estar dentro do MainConteiner
+  ***Parte que deverá estar dentro do MainConteinr
   <AnimationContainer>
           Lottie options={defaultOptions}
           height={250}
@@ -43,8 +44,8 @@ function HomePage() {
 
   return (
     <HomeContainer>
-      <Header />
-      <img src={Logo} alt="Logo" />
+      <StyleContainer />
+      
       <h1>Seja Bem Vindo(a) a nossa estação Spacial!</h1>
       <div>
         <button onClick={() => goToListTripsPage(history)}>Viagens</button>
