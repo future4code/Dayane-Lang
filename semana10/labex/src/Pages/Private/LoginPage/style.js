@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-import BottomPage from '../../Assets/logo.png';
+import BottomPage from '../../../Assets/bottompage.png';
 import { mainGreen, mainDarkGray, mainBlue } from '../../../constants/colors';
 
 export const LoginContainer = styled.div`

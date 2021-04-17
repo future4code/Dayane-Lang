@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { HomeContainer, MainContainer, AnimationContainer, Message } from './style'
+import { HomeContainer, MainContainer, AnimationContainer, Message, StyleDiv} from './style';
 import  Header  from '../../../Components/Header';
 import  Footer  from '../../../Components/Footer';
 import Lottie from 'react-lottie';
-import animationData from '../../..//Animation/Animation' //animação
+//import BottomPage from "../../Assets/bottompage.png";
+import animationData from '../../..//Animation/Animation'; //animação
 
 
 
@@ -26,18 +27,22 @@ function HomePage(){
      
     return (
         <HomeContainer>
-           <Header/>
-               <MainContainer>
-                   <AnimationContainer>
-                        <Lottie options={defaultOptions}
-                        height={250}
-                        width={250}
-                        isStopped={animationState.isStopped}
-                        isPaused={animationState.isPaused}
-                    />
-                    </AnimationContainer>
-                    <Message>Embarque conosco nessa aventura!</Message>
-               </MainContainer>
+            <Header/>
+                <StyleDiv>
+           
+                    <MainContainer>
+                        <AnimationContainer>
+                            <Lottie options={defaultOptions}
+                            height={250}
+                            width={250}
+                            isStopped={animationState.isStopped}
+                            isPaused={animationState.isPaused}
+                        />
+                        </AnimationContainer>
+                        <Message>Embarque conosco nessa AvEnTuRa!</Message>
+                    </MainContainer>
+           
+                </StyleDiv>  
            <Footer />
         </HomeContainer>
     )

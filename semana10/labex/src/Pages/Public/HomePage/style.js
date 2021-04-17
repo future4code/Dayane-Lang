@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import BottomPage from "../../Assets/bottompage.png";
+import  BottomPage  from '../../../Assets/bottompage.png';
 import TemplateHome from '../../../Assets/template.png';
+import  { mainDarkGray, mainViolet } from '../../../constants/colors';
+//import  ButtonSignUp  from '../../../constants/buttons';
 
 
 
@@ -21,21 +23,21 @@ export const MainContainer = styled.main`
   height: 65vh;
 `;
 
+export const ButtonSignUp = styled.button`
+width: 10vw;
+padding: 10px;
+margin-right: 4%;
+background-color: darkviolet;
+color: ${mainViolet};
+` 
+
 export const AnimationContainer = styled.div`
   margin-top: 0%;
   margin-bottom: 0%;
 `;
 
 export const Message = styled.h1`
-  color:"#40c8ae80" ;
-`;
-
-export const ButtonSignUp = styled.button`
-  width: 10vw;
-  padding: 10px;
-  margin-right: 4%;
-  background-color: "#03648a";
-  color: white;
+  color: ${mainDarkGray} ;
 `;
 
 export const StyleContainer = styled.div`
@@ -46,7 +48,7 @@ export const StyleContainer = styled.div`
     width: 100vh;
     height: 70vh;
     margin: 80px auto;
-    background-color: #00000080;
+    background-color: lightblue;
     h1 {
       background-image: url(${ TemplateHome })
     }
@@ -57,9 +59,8 @@ export const StyleContainer = styled.div`
     }
     
 `    
-    
-    
-/*    div {
+export const StyleDiv =  styled.div `
+   {
         margin-top: 50px;
         button {
             margin: 25px;
@@ -74,7 +75,10 @@ export const StyleContainer = styled.div`
             }
         }
     }
+` 
 
+ 
+/*
 import styled from 'styled-components'
 import { mainWhite, mainGray } from '../../../constants/colors'
 
@@ -93,6 +97,14 @@ export const MainContainer = styled.main`
    padding-left: 5%;
    height: 65vh;
 `
+
+export const ButtonSignUp = styled.button`
+  width: 10vw;
+  padding: 10px;
+  margin-right: 4%;
+  background-color: "#03648a";
+  color: darkgreen;
+`;
 
 export const AnimationContainer = styled.div`
    margin-top: 0%;

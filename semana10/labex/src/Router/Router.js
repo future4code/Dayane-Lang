@@ -1,15 +1,15 @@
 
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import HomePage from '../Pages/Public/HomePage/HomePage'
-import LoginPage from '../Pages/Private/LoginPage/LoginPage'
-import ApplicationFormPage from '../Pages/Public/ApplicationFormPage/ApplicationFormPage'
-import ListTripsPage from '../Pages/Public/LisTripsPage/LisTripsPage'
-import ListTrips from '../Pages/Private/ListTrips/listTrips'
-import TripDetailsPage from '../Pages/Private/TripDetailsPage/TripDetailsPage'
-import CreateTripPage from '../Pages/Private/CreateTripPage/CreateTripPage'
-import SingUpPage from '../Pages/Private/SignUp/SingUp'
-import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import HomePage from '../Pages/Public/HomePage/HomePage';
+import LoginPage from '../Pages/Private/LoginPage/LoginPage';
+import ApplicationFormPage from '../Pages/Public/ApplicationFormPage/ApplicationFormPage';
+import ListTripsPage from '../Pages/Public/LisTripsPage/LisTripsPage';
+import ListTrips from '../Pages/Private/ListTrips/listTrips';
+import TripDetailsPage from '../Pages/Private/TripDetailsPage/TripDetailsPage';
+import CreateTripPage from '../Pages/Private/CreateTripPage/CreateTripPage';
+import SingUpPage from '../Pages/Private/SignUp/SingUp';
+import ErrorPage from '../Pages/Public/ErrorPage/ErrorPage';
 
 function Router() {
   return (
@@ -39,12 +39,13 @@ function Router() {
             <Route exact path="/criar_viagens">
                <CreateTripPage />
             </Route>
+            <Route exact path="/erro_pagina">
+              <ErrorPage />
+            </Route>
             <Route>
                <HomePage />
             </Route>
-            <Route>
-              <ErrorPage />
-            </Route>
+            
         </Switch>
     </BrowserRouter>
   )

@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { mainBlue, mainWhite } from "../Components/colors";
+import styled from 'styled-components';
+import { mainBlue, mainViolet, mainGreen, mainLightBlue } from '../constants/colors';
 import { Link } from "react-router-dom";
-import { mainGreen, mainLightBlue } from "../constants/colors";
+
 
 // Styled AdmHeader
 export const AdmHeaderContainer = styled.header`
@@ -58,7 +58,7 @@ export const Menu = styled(Link)`
   }
   font-size: 16px;
   margin-left: 4%;
-  color: ${mainWhite};
+  color: ${mainViolet};
 `;
 
 // Styled Footer
