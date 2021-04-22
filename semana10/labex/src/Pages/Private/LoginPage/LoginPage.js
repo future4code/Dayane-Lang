@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { LoginContainer } from './style';
 import { ButtonLogin } from '../../../constants/buttons';
 import { InputNewLogin } from '../../../constants/inputs';
-import { useForm } from '../../../Router/useForm';
+import { useForm } from '../../../router/useForm';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 

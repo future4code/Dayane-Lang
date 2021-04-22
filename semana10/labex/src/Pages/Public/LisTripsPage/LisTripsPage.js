@@ -1,8 +1,8 @@
 import { TripsTitle, ListContainer, TripsContainer, NameTrip, InfoTrip } from '../LisTripsPage/style';
 import { ButtonRegister } from '../../../constants/buttons';
-import  { useRequestData }  from '../../../Hooks/useRequestData';
-import  Header  from '../../../Components/Header';
-import  Footer  from '../../../Components/Footer';
+import  { useRequestData }  from '../../../hooks/useRequestData';
+import  Header  from '../../../components/Header';
+import  Footer  from '../../../components/Footer';
 import { useHistory } from 'react-router-dom';
 
 

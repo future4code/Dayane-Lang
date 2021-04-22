@@ -1,10 +1,10 @@
-
 /* eslint-disable no-undef */
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { HeaderContainer, Logo, Menu} from "./styled";
+import { ButtonAdm } from '../constants/buttons'
 
-import LogoSite from "../Assets/logo.png";
+import LogoSite from "../assets/logo.png";
 
 
 const Header = () => {
@@ -16,10 +16,16 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Logo src={LogoSite} />
-      <Menu to="/home">HOME</Menu>
-      <Menu to="/viagens">VIAGENS</Menu>
-      <button onClick={goToLoginPage}>ADM</button>
+     
+        <Logo src={LogoSite} />
+        <div></div>
+        <Menu to="/home">HOME</Menu>
+      
+        <Menu to="/viagens">VIAGENS</Menu>
+        <ButtonAdm onClick={goToLoginPage}>
+          ADM
+        </ButtonAdm>
+     
     </HeaderContainer>
   );
 };

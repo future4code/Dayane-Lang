@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { HomeContainer, MainContainer, AnimationContainer, Message, StyleDiv} from './style';
-import  Header  from '../../../Components/Header';
-import  Footer  from '../../../Components/Footer';
+import { HomeContainer, MainContainer, AnimationContainer, Message, StyleContainer} from './style';
+import  Header  from '../../../components/Header';
+import  Footer  from '../../../components/Footer';
 import Lottie from 'react-lottie';
 //import BottomPage from "../../Assets/bottompage.png";
-import animationData from '../../..//Animation/Animation'; //animação
+import animationData from '../../../animation/Animation'; //animação
 
 
 
@@ -28,7 +28,7 @@ function HomePage(){
     return (
         <HomeContainer>
             <Header/>
-                <StyleDiv>
+                <StyleContainer>
            
                     <MainContainer>
                         <AnimationContainer>
@@ -42,7 +42,7 @@ function HomePage(){
                         <Message>Embarque conosco nessa AvEnTuRa!</Message>
                     </MainContainer>
            
-                </StyleDiv>  
+                </StyleContainer>  
            <Footer />
         </HomeContainer>
     )

@@ -1,7 +1,7 @@
 import { TripsTitle, InfoTrip, ListContainer, TripsContainer, NameTrip } from './style';
-import  { useRequestData }  from '../../../Hooks/useRequestData';
+import  { useRequestData }  from '../../../hooks/useRequestData';
 import { useHistory, useParams } from 'react-router-dom';
-import  AdmHeader  from '../../../Components/AdmHeader';
+import  AdmHeader  from '../../../components/AdmHeader';
 import { ButtonDetails, ButtonDelete  } from '../../../constants/buttons';
 import axios from 'axios';
 

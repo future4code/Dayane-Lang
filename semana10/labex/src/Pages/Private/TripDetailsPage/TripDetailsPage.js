@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { DetailsContainer, DetailsTrip, Candidates, AcceptedCandidates, TitlePage } from './style';
 import { ButtonAcceptedCandidate, ButtonDeleteCandidate } from '../../../constants/buttons';
-import { useProtectedPage } from '../../../Hooks/useProtectedPage';
+import { useProtectedPage } from '../../../hooks/useProtectedPage';
 import axios from 'axios';
 
 

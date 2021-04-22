@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useForm } from '../../../Router/useForm';
+import { useForm } from '../../../router/useForm';
 import { FormContainer } from './style';
 import { ButtonSubmit } from '../../../constants/buttons';
 import { InputRegister } from '../../../constants/inputs';

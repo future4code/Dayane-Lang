@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { mainGreen, mainWhite, mainBlue, mainViolet, mainGray, mainLightBlue, mainRed, mainDarkGray, mainDarkGreen} 
         from '../constants/colors';
 
+import BtnAdm from '../assets/buttonadm.svg'
+
 
 
 export const ButtonRegister= styled.button`
@@ -37,6 +39,7 @@ export const ButtonAdm = styled.button`
    width: 8vw;
    padding: 10px;
    margin-left: 4%;
+   background-image: url(${ BtnAdm });
    background-color: ${mainLightBlue};
    color: ${mainWhite};
    border-radius: 6px;

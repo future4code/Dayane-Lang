@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { mainBlue, mainViolet, mainGreen, mainLightBlue } from '../constants/colors';
-import { Link } from "react-router-dom";
 
+import { mainBlue, mainViolet, mainLightBlue } from '../constants/colors';
+import { Link } from "react-router-dom";
+import BtnAdmin from '../assets/buttonadm.svg';
+import  BottomFooter  from '../assets/colorfooter.png';
 
 // Styled AdmHeader
 export const AdmHeaderContainer = styled.header`
@@ -20,19 +22,26 @@ export const AdmLogo = styled.img`
   padding-bottom: 5px;
 `;
 
+
 // Styled Header
 export const HeaderContainer = styled.header`
   font-family: "Roboto", sans-serif;
-  background-color: ${mainGreen};
+  background-color: ${ mainLightBlue };
   color: white;
   width: 100%;
-  height: 15vh;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  & div {
+    flex-grow: 1;
+ }
 `;
 
-export const ButtonAdm = styled.img`
+export const ButtonAdmin = styled.image`
   width: 10%;
   margin-top: 3%;
   cursor: pointer;
+  background-color: ${BtnAdmin};
   &:hover {
     transform: scale(1.3);
   }
@@ -41,12 +50,15 @@ export const ButtonAdm = styled.img`
   }
 `;
 
+
 export const Logo = styled.img`
-  width: 130px;
+  width: 150px;
   margin-left: 2%;
   margin-right: 55%;
-  margin-top: 10px;
-  padding-bottom: 5px;
+  margin-top: 1px;
+  padding-bottom: 10px;
+  position: relative;
+  top: 40px;
 `;
 
 export const Menu = styled(Link)`
@@ -54,17 +66,18 @@ export const Menu = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   &:hover {
-    border-bottom: 3px solid #ff8e00;
+    border-bottom: 3px solid #ef5350;
   }
   font-size: 16px;
   margin-left: 4%;
   color: ${mainViolet};
-`;
+`; 
 
 // Styled Footer
 export const FooterContainer = styled.footer`
-  background-color: ${mainLightBlue};
-  color: white;
+background-image: url(${ BottomFooter });
+background-repeat: no-repeat;
+background-size: cover;
   width: 100%;
   height: 14vh;
   display: flex;
@@ -77,4 +90,9 @@ export const IconsSocial = styled.img`
   margin-top: 2%;
   margin-right: 1%;
   margin-left: 2%;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    border-bottom: 3px solid #ef5350;
+  }
 `;

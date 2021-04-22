@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from '../../../Router/useForm';
+import { useForm } from '../../../router/useForm';
 import { CreateTripContainer } from './style';
 import { ButtonSaveTrip } from '../../../constants/buttons';
 import { InputCreateTrip } from '../../../constants/inputs';

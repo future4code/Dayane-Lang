@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { AdmHeaderContainer, AdmLogo} from './styled'
 import { ButtonCreateTrip, ButtonRegisterLogin, ButtonLogout } from '../constants/buttons'
-import LogoSite from '../Assets/logo.png';
+import LogoSite from '../assets/logo.png';
 
 
 
