@@ -1,11 +1,13 @@
 import React from "react";
 
-const RecipeDetailPage = () => {
+
+const DetailsPostPage = () => {
   return (
     <div>
       <h1>RecipeDetailPage</h1>
+      
     </div>
   );
 };
 
-export default RecipeDetailPage
+export default DetailsPostPage ;

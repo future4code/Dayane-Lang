@@ -1,30 +1,35 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import AddRecipesPage from "../pages/AddRecipesPage/AddRecipesPage";
+import CreatePost from "../pages/CreatePost/CreatePost";
 import LoginPage from "../pages/LoginPage/LoginPage";
-import RecipeDetailPage from "../pages/RecipeDetailPage/RecipeDetailPage";
-import RecipesListPage from "../pages/RecipesListPage/RecipesListPage";
+import DetailsPostPage from "../pages/DetailsPostPage/DetailsPostPage";
+import FeedsPage from "../pages/FeedsPage/FeedsPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Header from "../components/Header/Header";
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
         <Route exact path="/login">
           <LoginPage />
         </Route>
         <Route>
-          <SignUpPage exact path="/cadastro" />
+          <LoginPage exact path="/" />
         </Route>
         <Route>
-          <RecipesListPage exact path="/" />
+          <SignUpPage exact path="/signup" />
         </Route>
         <Route>
-          <AddRecipesPage exact path="/adicionar-receita" />
+          <CreatePost exact path="/createpost" />
         </Route>
         <Route>
-          <RecipeDetailPage exact path="/detalhe/:id" />
+          <FeedsPage exact path="/feedpost" />
+        </Route>
+        <Route>
+          <DetailsPostPage exact path="/posts/:id" />
         </Route>
         <Route>
           <ErrorPage />
@@ -35,3 +40,5 @@ const Router = () => {
 };
 
 export default Router;
+
+
