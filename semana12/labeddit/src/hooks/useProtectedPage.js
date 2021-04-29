@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { useLayoutEffect } from "react";
-import { goToLogin } from "../routes/coordinator";
+import { goToLogin } from "../routes/cordinator";
 
 const useProtectedPage = () => {
   const history = useHistory();

@@ -1,10 +1,17 @@
 import React from "react";
+import logo from "../../assets/logo.png";
+import { ScreenContainer } from "./styled";
+import SignUpForm from "./SignUpForm";
+import { LogoImage } from "./styled";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
-const SignUpPage = () => {
+const SignUpPage = ({ setRightButtonText }) => {
+  useUnprotectedPage();
   return (
-    <div>
-      <h1>SignUpPage</h1>
-    </div>
+    <ScreenContainer>
+      <LogoImage src={logo} />
+      <SignUpForm setRightButtonText={setRightButtonText} />
+    </ScreenContainer>
   );
 };
 

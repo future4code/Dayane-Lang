@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/urls";
-import { goToFeedsPage } from "../routes/coordinator";
+import { goToFeeds } from "../routes/cordinator";
 
 export const login = (
   body,
@@ -16,7 +16,7 @@ export const login = (
       localStorage.setItem("token", res.data.token);
       clear();
       setIsLoading(false);
-      goToFeedsPage(history);
+      goToFeeds(history);
       setRightButtonText("Logout");
     })
     .catch((err) => {
@@ -39,7 +39,7 @@ export const signUp = (
       localStorage.setItem("token", res.data.token);
       clear();
       setIsLoading(false);
-      goToFeedsPage(history);
+      goToFeeds(history);
       setRightButtonText("Logout");
     })
     .catch((err) => {

@@ -17,19 +17,16 @@ const Router = () => {
           <LoginPage />
         </Route>
         <Route>
-          <LoginPage exact path="/" />
-        </Route>
-        <Route>
           <SignUpPage exact path="/signup" />
         </Route>
         <Route>
           <CreatePost exact path="/createpost" />
         </Route>
         <Route>
-          <FeedsPage exact path="/feedpost" />
+          <FeedsPage exact path={["/feed", "/"]} />
         </Route>
         <Route>
-          <DetailsPostPage exact path="/posts/:id" />
+          <DetailsPostPage exact path="/feed/posts/:id" />
         </Route>
         <Route>
           <ErrorPage />
@@ -40,5 +37,3 @@ const Router = () => {
 };
 
 export default Router;
-
-

@@ -2,8 +2,11 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import { StyledToolbar } from "./styled";
 import Button from "@material-ui/core/Button";
-import { goToFeedsPage, goToLogin } from "../../routes/cordinator";
+import { goToFeeds, goToLogin } from "../../routes/cordinator";
 import { useHistory } from "react-router-dom";
+import rightButtonText from "@material-ui/core/Button";
+import setRightButtonText from "@material-ui/core/Button";
+import rightButtonAction from "@material-ui/core/Button";
 
 const Header = ({ rightButtonText, setRightButtonText }) => {
   const token = localStorage.getItem("token");
@@ -26,7 +29,7 @@ const Header = ({ rightButtonText, setRightButtonText }) => {
   return (
     <AppBar position="static">
       <StyledToolbar>
-        <Button onClick={() => goToFeedsPage(history)} color="inherit">
+        <Button onClick={() => goToFeeds(history)} color="inherit">
           LabEddit
         </Button>
         <Button onClick={() => goToLogin(history)} color="inherit">
