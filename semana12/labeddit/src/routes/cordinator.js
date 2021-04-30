@@ -6,9 +6,9 @@ export const goToSignUp = (history) => {
   history.push("/signup");
 };
 
-export const goToCreatePost = (history) => {
-  history.push("/createpost");
-};
+// export const goToCreatePost = (history) => {
+//   history.push("/createpost");
+// };
 
 export const goToFeeds = (history) => {
   history.push("/feed");

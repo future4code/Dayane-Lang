@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useContext } from "react";
 import useProtectedPage from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
@@ -5,10 +6,10 @@ import PostCard from "../../components/PostCard/PostCard";
 import Loading from "../../components/Loading/Loading";
 import CreatePost from "../CreatePost/CreatePost";
 import { PostsContainer } from "./styled";
-import SearchContext from "../../context/SearchContext";
+//import SearchContext from "../../context/SearchContext";
 
 function FeedsPage() {
-  const { search } = useContext(SearchContext);
+  //const [ search ] = useContext(SearchContext);
   useProtectedPage();
   const [{ posts }, update] = useRequestData("/posts");
   return (
@@ -19,13 +20,13 @@ function FeedsPage() {
         <Loading />
       ) : (
         posts
-          .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
-          .filter(
-            (post) =>
-              post.text.toLowerCase().includes(search.toLowerCase()) ||
-              post.title.toLowerCase().includes(search.toLowerCase()) ||
-              post.username.toLowerCase().includes(search.toLowerCase())
-          )
+          //  .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
+          //   .filter(
+          //     (post) =>
+          //       post.text.toLowerCase().includes(search.toLowerCase()) ||
+          //       post.title.toLowerCase().includes(search.toLowerCase()) ||
+          //       post.username.toLowerCase().includes(search.toLowerCase())
+          //   )
           .map((item) => {
             return (
               <PostCard
@@ -47,21 +48,3 @@ function FeedsPage() {
 }
 
 export default FeedsPage;
-
-/*
-import React from "react";
-import { Button } from "@material-ui/core";
-
-const FeedsPage = () => {
-  return (
-    <div>
-      <h1>RecipesListPage</h1>
-      <Button variant="outlined" color="primary">
-        Detalhes
-      </Button>
-    </div>
-  );
-};
-
-export default FeedsPage;
-*/

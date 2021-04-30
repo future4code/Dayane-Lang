@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { goToDetailsPost } from "../../routes/cordinator";
 import { votePost } from "../../services/feed";
 import { Typography, TextField } from "@material-ui/core";
-import ChatIcon from "@material-ui/core/Chat";
+import ChatIcon from "@material-ui/icons/Chat";
 import {
   Arrow,
   Avatar,

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../constants/urls";
 
-const useRequestData = (initialData, url) => {
+const useRequestData = (initialData, urlEnd) => {
   const [data, setData] = useState(initialData);
 
   useEffect(() => {
     axios
-      .get(url, {
+      .get(`${BASE_URL}${urlEnd}`, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -18,7 +19,7 @@ const useRequestData = (initialData, url) => {
         console.log(error);
         alert("Ihh deu ruim.Tente novamente");
       });
-  }, [url]);
+  }, [urlEnd]);
 
   return data;
 };

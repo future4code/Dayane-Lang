@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import CreatePost from "../pages/CreatePost/CreatePost";
+//import CreatePost from "../pages/CreatePost/CreatePost";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import DetailsPostPage from "../pages/DetailsPostPage/DetailsPostPage";
 import FeedsPage from "../pages/FeedsPage/FeedsPage";
@@ -16,17 +16,14 @@ const Router = () => {
         <Route exact path="/login">
           <LoginPage />
         </Route>
-        <Route>
-          <SignUpPage exact path="/signup" />
+        <Route exact path="/signup">
+          <SignUpPage />
         </Route>
-        <Route>
-          <CreatePost exact path="/createpost" />
+        <Route exact path={["/feed", "/"]}>
+          <FeedsPage />
         </Route>
-        <Route>
-          <FeedsPage exact path={["/feed", "/"]} />
-        </Route>
-        <Route>
-          <DetailsPostPage exact path="/feed/posts/:id" />
+        <Route exact path="/feed/posts/:id">
+          <DetailsPostPage />
         </Route>
         <Route>
           <ErrorPage />
