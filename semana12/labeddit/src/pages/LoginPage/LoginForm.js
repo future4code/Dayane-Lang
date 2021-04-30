@@ -51,7 +51,7 @@ const LoginForm = ({ setRightButtonText }) => {
           color={"primary"}
         >
           {isLoading ? (
-            <CircularProgress color={"inherit"} size={24} />
+            <CircularProgress color={"inherit"} size={15} />
           ) : (
             <>Fazer Login</>
           )}

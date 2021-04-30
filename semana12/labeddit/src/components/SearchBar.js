@@ -1,10 +1,10 @@
-import { Search2Icon } from "@material-ui/core";
-import { Input, InputGroup, InputRightElement } from "@material-ui/core";
+import SearchTwoToneIcon from "@material-ui/icons/SearchTwoTone";
+import { Input, InputLabel, InputBase } from "@material-ui/core";
 import React, { useContext } from "react";
 import SearchContext from "../context/SearchContext";
 
 function SearchBar() {
-  const [search, setSearch] = useContext(SearchContext);
+  const { search, setSearch } = useContext(SearchContext);
 
   const onChange = (e) => {
     setSearch(e.target.value);
@@ -12,10 +12,18 @@ function SearchBar() {
 
   return (
     <div>
-      <InputGroup>
-        <Input onChange={onChange} value={search} placeholder="Pesquisar" />
-        <InputRightElement children={<Search2Icon color="#f1aad7.300" />} />
-      </InputGroup>
+      <InputLabel>
+        <Input
+          onChange={onChange}
+          value={search}
+          placeholder="Pesquisar"
+          color="#4373c2"
+        />
+        <InputBase
+          color="#4373c2"
+          children={<SearchTwoToneIcon color="white.300" />}
+        />
+      </InputLabel>
     </div>
   );
 }

@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../constants/urls";
 
-const useRequestData = (initialData, urlEnd) => {
+const useRequestData = (initialData, url) => {
   const [data, setData] = useState(initialData);
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}${urlEnd}`, {
+      .get(url, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
       })
-      .then((response) => {
-        setData(response.data);
+      .then((res) => {
+        setData(res.data);
       })
-      .catch((error) => {
-        console.log(error);
-        alert("Ihh deu ruim.Tente novamente");
+      .catch((err) => {
+        console.log(err);
+        alert("Deu ruim, tente novamente");
       });
-  }, [urlEnd]);
+  }, [url]);
 
   return data;
 };

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/urls";
 
-export const createPost = (body, update) => {
+export const createPost = (body, clear) => {
   axios
     .post(`${BASE_URL}/posts`, body, {
       headers: {
@@ -9,11 +9,11 @@ export const createPost = (body, update) => {
       },
     })
     .then((res) => {
-      window.alert("Post criado com sucesso!");
-      update();
+      alert(res.data.message);
+      clear();
     })
     .catch((err) => {
-      window.alert("Ih deu erro!");
+      alert(err.response.message);
     });
 };
 
@@ -25,11 +25,10 @@ export const createComment = (body, postId, update) => {
       },
     })
     .then((res) => {
-      window.alert("Comentário criado com sucesso!");
+      alert(res.data.message);
       update();
     })
     .catch((err) => {
-      window.alert("Ih deu erro!");
       console.log(err);
     });
 };
@@ -42,10 +41,10 @@ export const votePost = (body, postId, update) => {
       },
     })
     .then((res) => {
+      alert(res.data.message);
       update();
     })
     .catch((err) => {
-      window.alert("Votação não concluída. Vote novamente please!");
       console.log(err);
     });
 };
@@ -58,10 +57,10 @@ export const voteComment = (body, postId, commentId, update) => {
       },
     })
     .then((res) => {
+      alert(res.data.message);
       update();
     })
     .catch((err) => {
-      window.alert("Votação não concluída. Vote novamente please!");
       console.log(err);
     });
 };
