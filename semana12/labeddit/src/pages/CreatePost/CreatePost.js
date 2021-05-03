@@ -18,7 +18,7 @@ import {
 } from "./styled";
 
 function CreatePost(props) {
-  const [form, onChange, reset] = useForm({ text: "", title: "" });
+  const { form, onChange, reset } = useForm({ text: "", title: "" });
   const username = localStorage.getItem("username");
 
   const handleSubmission = (e) => {

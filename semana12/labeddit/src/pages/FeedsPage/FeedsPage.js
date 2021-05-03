@@ -1,5 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useContext } from "react";
+import React from "react";
+import { useContext } from "react";
 import useProtectedPage from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
 import PostCard from "../../components/PostCard/PostCard";
@@ -9,7 +9,7 @@ import { PostsContainer } from "./styled";
 import SearchContext from "../../context/SearchContext";
 
 function FeedsPage() {
-  const {search} = useContext(SearchContext);
+  const { search } = useContext(SearchContext);
   useProtectedPage();
   const [{ posts }, update] = useRequestData("/posts");
   return (

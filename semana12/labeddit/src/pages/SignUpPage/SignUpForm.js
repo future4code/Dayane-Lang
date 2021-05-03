@@ -7,9 +7,9 @@ import useForm from "../../hooks/useForm";
 import { signUp } from "../../services/user";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const SignUpForm = ({ setRightButtonText }) => {
+function SignUpForm() {
   const history = useHistory();
-  const [form, onChange, clear] = useForm({
+  const {form, onChange, clear} = useForm({
     name: "",
     email: "",
     password: "",
@@ -18,7 +18,7 @@ const SignUpForm = ({ setRightButtonText }) => {
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-    signUp(form, clear, history, setRightButtonText, setIsLoading);
+    signUp(form, clear, history, setIsLoading);
   };
 
   return (

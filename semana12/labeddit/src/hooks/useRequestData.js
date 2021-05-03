@@ -1,26 +1,30 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { BASE_URL } from "../constants/urls";
 
-const useRequestData = (initialData, url) => {
-  const [data, setData] = useState(initialData);
+export const useRequestData = (urlEnd) => {
+  const [data, setData] = useState({});
 
-  useEffect(() => {
+  const getData = () => {
     axios
-      .get(url, {
+      .get(`${BASE_URL}${urlEnd}`, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
       })
-      .then((res) => {
-        setData(res.data);
+      .then((response) => {
+        setData(response.data);
       })
       .catch((err) => {
-        console.log(err);
-        alert("Deu ruim, tente novamente");
+        console.log(err.message);
       });
-  }, [url]);
+  };
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [urlEnd]);
 
-  return data;
+  return [data, getData];
 };
 
 export default useRequestData;

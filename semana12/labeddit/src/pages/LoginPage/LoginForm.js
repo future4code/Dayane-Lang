@@ -1,20 +1,40 @@
 import React, { useState } from "react";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 import { InputsContainer, LoginFormContainer } from "./styled";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import useForm from "../../hooks/useForm";
-import { login } from "../../services/user";
+//import useForm from "../../hooks/useForm";
+//import { login } from "../../services/user";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../../constants/urls";
+import { goToFeed } from "../../routes/coordinator";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const LoginForm = ({ setRightButtonText }) => {
-  const [form, onChange, clear] = useForm({ email: "", password: "" });
-  const history = useHistory();
-  const [isLoading, setIsLoading] = useState(false);
+export default function LoginForm() {
+  useUnprotectedPage();
 
-  const onSubmitForm = (event) => {
+  const formDefault = { email: "", password: "" };
+
+  const history = useHistory();
+  const [form, setForm] = useState(formDefault);
+  const isLoading = true;
+
+  const onChange = (event) => {
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const onSubmitForm = async (event) => {
     event.preventDefault();
-    login(form, clear, history, setRightButtonText, setIsLoading);
+
+    try {
+      const response = await axios.post(`${BASE_URL}/login`, form);
+      window.localStorage.setItem("token", response.data.token);
+      goToFeed(history);
+    } catch (error) {
+      window.alert("Usuário e/ou Senha inválido(s)");
+    }
   };
 
   return (
@@ -59,6 +79,4 @@ const LoginForm = ({ setRightButtonText }) => {
       </form>
     </LoginFormContainer>
   );
-};
-
-export default LoginForm;
+}

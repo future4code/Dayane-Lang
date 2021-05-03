@@ -10,6 +10,9 @@ import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 const LoginPage = ({ setRightButtonText }) => {
   useUnprotectedPage();
   const history = useHistory();
+
+  
+  
   return (
     <ScreenContainer>
       <LogoImage src={logo} />
