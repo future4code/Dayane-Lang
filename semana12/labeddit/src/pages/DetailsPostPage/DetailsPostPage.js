@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useProtectedPage from "../../hooks/useProtectedPage";
-import useRequestData  from "../../hooks/useRequestData";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
+import { useRequestData } from "../../hooks/useRequestData";
 import Loading from "../../components/Loading/Loading";
 import CommentCard from "../../components/ComentCard/ComentCard";
 import CreateComment from "../../components/CreateComment/CreateComment";
@@ -17,12 +17,8 @@ import {
   TextContainer,
   UserThings,
 } from "./styled";
-//import { Heading, Text } from "@material-ui/core";
+
 import ChatIcon from "@material-ui/icons/Chat";
-//import greyDown from '../../assets/grey-down.svg'
-//import greyUp from '../../assets/grey-up.svg'
-//import coloredUp from '../../assets/colored-up.svg'
-//import coloredDown from '../../assets/colored-down.svg'
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import { neutraColor } from "../../constants/colors";
@@ -101,6 +97,7 @@ function DetailsPostPage() {
             <CreateComment update={update} id={post.id} />
           </StyledBox>
           <CommentsContainer>
+            {" "}
             {post.comments
               .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
               .map((item) => {
@@ -127,7 +124,3 @@ function DetailsPostPage() {
 }
 
 export default DetailsPostPage;
-
-/*
-<Heading size="md">{post.votesCount}</Heading>
-*/

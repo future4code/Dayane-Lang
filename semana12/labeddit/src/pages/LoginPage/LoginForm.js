@@ -1,3 +1,5 @@
+/*
+
 import React, { useState } from "react";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 import { InputsContainer, LoginFormContainer } from "./styled";
@@ -8,8 +10,9 @@ import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
-import { goToFeed } from "../../routes/coordinator";
+import { goToFeeds } from "../../routes/coordinator";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { goToLogin } from "../../routes/cordinator";
 
 export default function LoginForm() {
   useUnprotectedPage();
@@ -31,7 +34,7 @@ export default function LoginForm() {
     try {
       const response = await axios.post(`${BASE_URL}/login`, form);
       window.localStorage.setItem("token", response.data.token);
-      goToFeed(history);
+      goToLogin(history);
     } catch (error) {
       window.alert("Usuário e/ou Senha inválido(s)");
     }
@@ -80,3 +83,5 @@ export default function LoginForm() {
     </LoginFormContainer>
   );
 }
+
+*/

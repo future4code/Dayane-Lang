@@ -18,6 +18,15 @@ export const InputsContainer = styled.div`
   margin-bottom: 20px;
 `;
 
+
+export const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  height: 28vh;
+  justify-content: space-around;
+  margin-bottom: 15px;
+`;
+
 export const LoginFormContainer = styled.div`
   display: flex;
   flex-direction: column;

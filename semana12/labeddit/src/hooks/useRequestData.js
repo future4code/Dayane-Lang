@@ -21,10 +21,12 @@ export const useRequestData = (urlEnd) => {
   };
   useEffect(() => {
     getData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlEnd]);
 
   return [data, getData];
 };
 
-export default useRequestData;
+
+

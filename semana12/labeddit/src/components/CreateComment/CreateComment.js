@@ -1,11 +1,11 @@
 import React from "react";
-import useForm  from "../../hooks/useForm";
+import {useForm} from "../../hooks/useForm";
 import { createComment } from "../../services/feed";
 import { Avatar, CreateContainer, FormContainer, UserThings } from "./styled";
 import { FormControl, Button, TextField, Typography } from "@material-ui/core";
 
 function CreateComment(props) {
-  const [form, onChange, reset] = useForm({ text: "" });
+  const {form, onChange, reset} = useForm({ text: "" });
   const username = localStorage.getItem("username");
 
   const handleSubmission = (e) => {

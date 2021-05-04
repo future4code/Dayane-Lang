@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import useProtectedPage from "../../hooks/useProtectedPage";
-import useRequestData from "../../hooks/useRequestData";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
+import { useRequestData } from "../../hooks/useRequestData";
 import PostCard from "../../components/PostCard/PostCard";
 import Loading from "../../components/Loading/Loading";
 import CreatePost from "../CreatePost/CreatePost";

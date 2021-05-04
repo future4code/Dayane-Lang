@@ -1,3 +1,4 @@
+/*
 import axios from 'axios'
 import { BASE_URL } from '../constants/urls'
 import { goToFeeds } from '../routes/coordinator'
@@ -27,8 +28,8 @@ export const signUp = (body, clear, history) => {
             alert(err.response.data.message)
         })
 }
+*/
 
-/*
 import axios from "axios";
 import { BASE_URL } from "../constants/urls";
 import { goToFeeds } from "../routes/cordinator";
@@ -64,4 +65,4 @@ export const signUp = (body, history, setLoading) => {
       window.alert("Ops! Acho que já existe um usuário com algum desses dados");
     });
 };
-*/
+

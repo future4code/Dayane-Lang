@@ -12,10 +12,6 @@ import {
   TextContainer,
   UserThings,
 } from "./styled";
-//import greyDown from '../../assets/grey-down.svg'
-//import greyUp from '../../assets/grey-up.svg'
-//import coloredUp from '../../assets/colored-up.svg'
-//import coloredDown from '../../assets/colored-down.svg'
 
 function PostCard(props) {
   const history = useHistory();
@@ -32,14 +28,14 @@ function PostCard(props) {
       return (
         <>
           <Arrow
-            onMouseOver={(e) => (e.currentTarget = "#848484")}
-            onMouseOut={(e) => (e.currentTarget = "#848484")}
+            onMouseOver={(e) => (e.currentTarget.colors = "#848484")}
+            onMouseOut={(e) => (e.currentTarget.colors = "#848484")}
             onClick={() => handleVote(1)}
           />
           <Typography size="md">{props.votesCount}</Typography>
           <Arrow
-            onMouseOver={(e) => (e.currentTarget = "#848484")}
-            onMouseOut={(e) => (e.currentTarget = "#848484")}
+            onMouseOver={(e) => (e.currentTarget.colors = "#848484")}
+            onMouseOut={(e) => (e.currentTarget.colors = "#848484")}
             onClick={() => handleVote(-1)}
           />
         </>
@@ -50,8 +46,8 @@ function PostCard(props) {
           <Arrow onClick={() => handleVote(0)} />
           <Typography size="md">{props.votesCount}</Typography>
           <Arrow
-            onMouseOver={(e) => (e.currentTarget = "#848484")}
-            onMouseOut={(e) => (e.currentTarget = "#848484")}
+            onMouseOver={(e) => (e.currentTarget.colors = "#848484")}
+            onMouseOut={(e) => (e.currentTarget.colors = "#848484")}
             onClick={() => handleVote(-1)}
           />
         </>
@@ -60,8 +56,8 @@ function PostCard(props) {
       return (
         <>
           <Arrow
-            onMouseOver={(e) => (e.currentTarget = "#848484")}
-            onMouseOut={(e) => (e.currentTarget = "#848484")}
+            onMouseOver={(e) => (e.currentTarget.colors = "#848484")}
+            onMouseOut={(e) => (e.currentTarget.colors = "#848484")}
             onClick={() => handleVote(1)}
           />
           <Typography size="md">{props.votesCount}</Typography>
@@ -89,7 +85,7 @@ function PostCard(props) {
         <TextField>{props.text}</TextField>
 
         <TextField pt="0.3em" textAlign="end">
-          <ChatIcon color="#f1aad7" /> {props.commentsCount}{" "}
+          <ChatIcon color="grey" /> {props.commentsCount}{" "}
           {props.commentsCount === 1 ? "comentário" : "comentários"}
         </TextField>
       </TextContainer>

@@ -1,6 +1,6 @@
 import React from "react";
 import { voteComment } from "../../services/feed";
-import { Typography, TextField, colors } from "@material-ui/core";
+import { Typography, TextField} from "@material-ui/core";
 import {
   Arrow,
   Avatar,
@@ -24,14 +24,14 @@ function CommentCard(props) {
       return (
         <>
           <Arrow
-            onMouseOver={(e) => (e.currentTarget = colors)}
-            onMouseOut={(e) => (e.currentTarget = colors)}
+            onMouseOver={(e) => (e.currentTarget.colors = "primary")}
+            onMouseOut={(e) => (e.currentTarget.colors = "neutraColor")}
             onClick={() => handleVote(1)}
           />
           <Typography size="md">{props.votesCount}</Typography>
           <Arrow
-            onMouseOver={(e) => (e.currentTarget = colors)}
-            onMouseOut={(e) => (e.currentTarget = colors)}
+            onMouseOver={(e) => (e.currentTarget.colors = "primary")}
+            onMouseOut={(e) => (e.currentTarget.colors = "neutraColor")}
             onClick={() => handleVote(-1)}
           />
         </>
@@ -42,8 +42,8 @@ function CommentCard(props) {
           <Arrow onClick={() => handleVote(0)} />
           <Typography size="md">{props.votesCount}</Typography>
           <Arrow
-            onMouseOver={(e) => (e.currentTarget = colors)}
-            onMouseOut={(e) => (e.currentTarget = colors)}
+            onMouseOver={(e) => (e.currentTarget.colors = "primary")}
+            onMouseOut={(e) => (e.currentTarget.colors = "neutraColor")}
             onClick={() => handleVote(-1)}
           />
         </>
@@ -52,8 +52,8 @@ function CommentCard(props) {
       return (
         <>
           <Arrow
-            onMouseOver={(e) => (e.currentTarget = colors)}
-            onMouseOut={(e) => (e.currentTarget = colors)}
+            onMouseOver={(e) => (e.currentTarget.colors = "primary")}
+            onMouseOut={(e) => (e.currentTarget.colors = "neutraColor")}
             onClick={() => handleVote(1)}
           />
           <Typography size="md">{props.votesCount}</Typography>
