@@ -1,235 +1,116 @@
-import React, { useState } from "react";
-import { useForm } from "../../hooks/useForm";
-import { useHistory } from "react-router-dom";
-import { login } from "../../services/user";
-import {
-  FormControl,
-  FormLabel,
-  TextField,
-  Input,
-  InputBase,
-  InputAdornment,
-  Button,
-  Typography,
-} from "@material-ui/core";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+import { BASE_URL } from "../../constants/urls";
 
-import EmailIcon from "@material-ui/icons/Email";
-import LockIcon from "@material-ui/icons/Lock";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import logoLabeddit from "../../assets/logo.png";
+import { LogoImage } from "./styled";
 
-import {
-  ScreenContainer,
-  SignUpButtonContainer,
-  FormContainer,
-  LoginFormContainer,
-} from "./styled";
-import Logo from "../../assets/logo.png";
-import {goToSignUp} from "../../routes/cordinator";
-
-function LoginPage() {
-  const { form, onChange, reset } = useForm({ email: "", password: "" });
+const LoginPage = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const history = useHistory();
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmission = (e) => {
-    e.preventDefault();
-    login(form, history, setLoading);
-    reset();
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      history.push("/feed");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleGoToSignup = () => {
+    history.push("/signup");
+  };
+
+  const handleUpdateEmail = (event) => {
+    const newEmail = event.target.value;
+    setEmail(newEmail);
+  };
+
+  const handleUpdatePassword = (event) => {
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+  };
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const body = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await axios.post(`${BASE_URL}/login`, body);
+
+      localStorage.setItem("token", response.data.token);
+
+      history.push("/feed");
+    } catch (error) {
+      alert("Deu ruim. Tente novamente por favor ☻");
+      console.error(error);
+    }
   };
 
   return (
-    <ScreenContainer>
-      <LoginFormContainer borderWidth="1px" borderRadius="lg">
-        <Logo src={Logo} />
-        <Typography textAlign="center" p="0.2em">
+    <Container component="main" maxWidth="xs">
+      <div>
+        <LogoImage src={logoLabeddit} alt="" />
+        <Avatar>
+          <LockOutlinedIcon />
+        </Avatar>
+
+        <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <FormContainer onSubmit={handleSubmission}>
-          <FormControl id="email">
-            <FormLabel>Email</FormLabel>
-            <InputBase>
-              <InputAdornment
-                pointerEvents="none"
-                children={<EmailIcon color="gray.300" />}
-              />
-              <Input
-                required
-                placeholder="Digite seu email"
-                type="email"
-                onChange={onChange}
-                value={form.email}
-                name="email"
-              />
-            </InputBase>
-          </FormControl>
-          <FormControl id="password">
-            <FormLabel>Senha</FormLabel>
-            <InputBase>
-              <InputAdornment
-                pointerEvents="none"
-                children={<LockIcon color="gray.300" />}
-              />
-              <Input
-                required
-                placeholder="Digite sua senha"
-                type="password"
-                value={form.password}
-                onChange={onChange}
-                name="password"
-              />
-            </InputBase>
-          </FormControl>
-          <Button
-            isLoading={loading}
-            colorScheme="violet"
-            variant="solid"
-            type="submit"
-          >
-            Login
-          </Button>
-        </FormContainer>
-        <SignUpButtonContainer>
-          <TextField>Não possui cadastro?</TextField>
-          <Button onClick={() => goToSignUp(history)}>Cadastre-se!</Button>
-        </SignUpButtonContainer>
-      </LoginFormContainer>
-    </ScreenContainer>
-  );
-}
-
-export default LoginPage;
-
-/*
-
-
-export default LoginPage;
-
-import React from "react";
-import useForm from "../../hooks/useForm";
-import { createPost } from "../../services/feed";
-import {
-  FormControl,
-  TextField,
-  Input,
-  Button,
-  Typography,
-} from "@material-ui/core";
-
-import {
-  Avatar,
-  FormContainer,
-  LoginContainer,
-  StyledBox,
-  UserThings,
-} from "./styled";
-
-function CreatePost(props) {
-  const { form, onChange, reset } = useForm({ text: "", title: "" });
-  const username = localStorage.getItem("username");
-
-  const handleSubmission = (e) => {
-    e.preventDefault();
-    createPost(form, props.update);
-    reset();
-  };
-
-  return (
-    <StyledBox borderWidth="1px" borderRadius="lg">
-      <LoginContainer>
-        <UserThings>
-          <Avatar
-            src={`https://avatars.dicebear.com/api/avataaars/${username}.svg`}
+        <form onSubmit={handleLogin}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="E-mail"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            onChange={handleUpdateEmail}
+            value={email}
           />
-          <Typography size="xs" pl="0.4em">
-            u/{username}
-          </Typography>
-        </UserThings>
-        <Typography size="lg" textAlign="center" pb="0.2em">
-          Crie seu post
-        </Typography>
-        <FormContainer onSubmit={handleSubmission}>
-          <FormControl id="title">
-            <Input
-              required
-              placeholder="Insira um título para o seu post"
-              onChange={onChange}
-              value={form.title}
-              name="title"
-            />
-          </FormControl>
-          <FormControl id="text">
-            <TextField
-              borderRadius="lg"
-              size="sm"
-              required
-              placeholder="Insira o texto do seu post"
-              onChange={onChange}
-              value={form.text}
-              name="text"
-            />
-          </FormControl>
-          <Button colorScheme="#f1aad7" variant="solid" type="submit">
-            POSTAR
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Senha"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            onChange={handleUpdatePassword}
+            value={password}
+          />
+          <Button type="submit" fullWidth variant="contained" color="primary">
+            Entrar
           </Button>
-        </FormContainer>
-      </LoginContainer>
-    </StyledBox>
+          <Grid container>
+            <Grid item>
+              <Link href="#" onClick={handleGoToSignup} variant="body2">
+                {"Não tem conta? Cadastre-se!"}
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+    </Container>
   );
-}
+};
 
-export default CreatePost;
-
-
-*/
-
-/*
-import React from "react";
-import { useState } from "react";
-import { useForm } from "../../hooks/useForm";
-import { useHistory } from "react-router-dom";
-import { ScreenContainer, LogoImage, SignUpButtonContainer } from "./styled";
-import logo from "../../assets/logo.png";
-import Button from "@material-ui/core/Button";
-import { Input, InputBase } from "@material-ui/core";
-import LoginForm from "./LoginForm";
-import { goToSignUp } from "../../routes/cordinator";
-import { login } from "../../services/user";
-
-function LoginPage() {
-  const { form, onChange, reset } = useForm({ email: "", password: "" });
-  const history = useHistory();
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmission = (e) => {
-    e.preventDefault();
-    login(form, history, setLoading);
-    reset();
-  };
-
-  return (
-    <ScreenContainer>
-      <LogoImage src={logo} />
-      <LoginForm onSubmit={handleSubmission} />
-      <SignUpButtonContainer>
-        <Input
-          required
-          placeholder="Digite seu email"
-          type="email"
-          onChange={onChange}
-          value={form.email}
-          name="email"
-        />
-        <Button
-          onClick={() => goToSignUp(history)}
-          type={"submit"}
-          fullWidth
-          variant={"text"}
-          color={"primary"}
-          isLoading={loading}
-        >
-          Não possui conta? Cadastre-se
-        </Button>
-      </SignUpButtonContainer>
-    </ScreenContainer>
-  );
-}
-*/
+export default LoginPage;
