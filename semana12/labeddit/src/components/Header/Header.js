@@ -144,6 +144,9 @@ const Header = ({ rightButtonText, setRightButtonText }) => {
           {rightButtonText}
         </Button>
         <LogoutIcon onClick={logout} src={logoutIcon} />
+        <Button onClick={() => goToLogin(history)} color="inherit">
+        </Button>
+       
       </StyledToolbar>
       
     </AppBar>
