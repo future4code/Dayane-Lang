@@ -12,5 +12,8 @@
       "exercicio-2"
    ],
    "author": "Dayane-Lang",
-   "license": "ISC"
+   "license": "ISC",
+   "dependencies": {
+      "readline-sync": "^1.4.10"
+   }
 }
