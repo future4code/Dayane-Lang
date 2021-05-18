@@ -8,8 +8,8 @@
     "exercicio2": "tsc && node ./build/exercicio2.js",
     "exercicio3": "tsc && node ./build/exercicio3.js",
     "exercicio4": "tsc && node ./build/exercicio4.js",
-    "desafio1": "tsc && node ./build/desafio1.js",
-    "desafio2": "tsc && node ./build/desafio2.js",
+    "exercicio5-desafio": "tsc && node ./build/exercicio5-desafio.js",
+    "exercicio6-desafio": "tsc && node ./build/exercicio6-desafio.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
