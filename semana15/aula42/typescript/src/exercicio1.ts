@@ -3,14 +3,12 @@
 /*
 a) Crie uma variável minhaString do tipo string e atribua um valor a ela. 
 Tente atribuir um número a esta variável. O que acontece? 
-
+*/
 
 const minhaString : string = "Bonjour!"  //Apresentou na terminal o valor atribuído.
 
 //const minhaString : string = 15  //Apresentou na terminal um erro de atribuição de valor cujo era diferente do tipo requerido.
 console.log(minhaString)
-
-
 
 
 /*
