@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "exercicio-3",
     "version": "1.0.0",
     "description": "Exercícios de Node e package.json",
@@ -14,3 +15,20 @@
     "author": "Dayane-Lang",
     "license": "ISC"
  }
+=======
+   "name": "exercicio-3",
+   "version": "1.0.0",
+   "description": "Exercícios de Node e package.json",
+   "main": "index.js",
+   "scripts": {
+      "start": "echo \"Iniciando aplicação...\" && node ./exercicio-3.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "keywords": [
+      "node",
+      "exercicio-3"
+   ],
+   "author": "Dayane-Lang",
+   "license": "ISC"
+}
+>>>>>>> 849ffdca654457c01b9112df0a8871ff00ccd980
