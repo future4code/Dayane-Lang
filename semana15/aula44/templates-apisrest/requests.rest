@@ -1,0 +1,25 @@
+####
+
+GET http://localhost:3003/users 
+Content-Type: application/json // Busca todos os usuários
+
+####
+
+GET http://localhost:3003/users/searchByType?type=NORMAL 
+Content-Type: application/json // Busca por nome do tipo
+
+###
+
+GET http://localhost:3003/users/searchByName?name=Dayane
+Content-Type: application/json // Busca por nome
+
+###
+
+POST http://localhost:3003/users 
+Content-Type: application/json // posta novo usuário utilizando o body
+
+{
+"name": "Dayane", "email": "dayane@email.com", "type": "ADMIN", "age": 35
+}
+
+###
