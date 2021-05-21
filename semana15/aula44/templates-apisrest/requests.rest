@@ -23,3 +23,31 @@ Content-Type: application/json // posta novo usuário utilizando o body
 }
 
 ###
+
+###
+
+PUT http://localhost:3003/users // atualiza o nome do usuário atraves do id
+
+{
+"name": "nome", "email": "email@email.com", "type": "ADMIN", "age": 17
+}
+
+###
+
+PUT http://localhost:3003/users/7 // atualiza o nome do usuário atraves do id
+
+{
+"name":"Dayane-ALTERADO"
+}
+
+###
+
+PATCH http://localhost:3003/users/7 // atualiza o nome do usuário atraves do id
+
+{
+"name":"Dayane-REALTERADO"
+}
+
+###
+
+DELETE http://localhost:3003/users/deleteUser/7 Content-Type: application/json // deleta o usuário atraves do id

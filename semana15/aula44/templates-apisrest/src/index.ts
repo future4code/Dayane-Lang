@@ -239,6 +239,79 @@ R. Não, pois o método PUT é mais usado para realizar alterações em um id ex
 
 })
 
+//EXERCÍCIO 5
+
+/* 
+Vamos alterar nosso último usuário. Crie um endpoint com o método PUT para alterar o nome do nosso usuário recém criado. 
+Adicione em seu nome o sufixo -ALTERADO.  
+*/
+
+app.put("/users/:id", (req: Request, res: Response) => {
+
+  let errCode: number = 400
+  try {
+      const requestBody = {
+          name: req.body.name
+      }
+      const lastUserIndex = users.length - 1
+      users[lastUserIndex].name = `${requestBody.name}-ALTERADO`
+      res.status(200).send(`Usuário alterado!`)
+  } catch (error) {
+      res.status(errCode).send(error.message)
+  }
+
+})
+
+
+//EXERCÍCIO 6
+
+/*  
+Essa não! Alteramos um dado por engano. Vamos realterar nosso último usuário. 
+Crie um endpoint com o método PATCH para alterar mais uma vez o nome do nosso usuário recém alterado. 
+Adicione em seu nome o sufixo -REALTERADO.  
+*/
+
+app.patch('/users/:id', (req: Request, res: Response) => {
+
+let errCode: number = 400
+
+  try {
+        const requestBody = {
+          name: req.body.name
+      }
+        const lastUserIndex = users.length - 1
+        users[lastUserIndex].name = `${requestBody.name}-REALTERADO`
+        res.status(200).send(`Usuário realterado!`)
+      } catch (error) {
+        res.status(errCode).send(error.message)
+      }
+  })
+
+//EXERCÍCIO 7
+
+/*  
+Essa não! Alteramos um dado por engano. Vamos realterar nosso último usuário. 
+Crie um endpoint com o método PATCH para alterar mais uma vez o nome do nosso usuário recém alterado. 
+Adicione em seu nome o sufixo -REALTERADO.  
+*/
+
+app.delete('/users/deleteUser/:id', (req: Request, res: Response) => {
+
+let errCode: number = 400
+
+  try {
+       const lastUserIndex = users.length - 1
+
+        users.splice(lastUserIndex)
+        res.status(200).send(`Usuário deletado!`)
+
+      } catch (error) {
+          res.status(errCode).send(error.message)
+      }
+  })
+
+
+
 app.listen(3003, () => {
   console.log('Server is running at port 3003')
 })
