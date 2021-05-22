@@ -56,7 +56,7 @@ app.post('/users/createNewUser', (req: Request, res: Response) => {
       const newUser: userAccount = {
         name: req.body.name,
         cpf: req.body.cpf,
-        birthDate: req.body.birthDate,
+        birthDateAsString: req.body.birthDate,
         balance: 0,
         statement: []
     }
