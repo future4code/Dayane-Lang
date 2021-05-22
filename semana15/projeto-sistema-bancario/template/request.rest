@@ -1,0 +1,13 @@
+##### CreateNewUser 
+POST http://localhost:3003/users/createNewUser 
+Content-Type: : application/json // cria uma conta para o cliente
+
+{
+"name":"Fulana", "CPF": "353.343.333-31", "birthDateAsString": "25/12/1997"
+}
+
+
+##### GetAllUsers 
+GET http://localhost:3003/users/all // Busca todos os usuários
+
+#####
