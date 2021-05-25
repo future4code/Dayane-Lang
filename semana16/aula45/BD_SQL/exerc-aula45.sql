@@ -19,4 +19,3 @@ VALUES
 ( "006", "Lima Duarte", "500000", "1929-04-30", "male"),
 ( "007", "Cássia Kiss", "100000", "1963-10-02", "female");
 
-SELECT * FROM `cruz-2114392-dayane-lang`.Actor;
