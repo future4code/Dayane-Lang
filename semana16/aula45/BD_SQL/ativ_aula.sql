@@ -1,1 +1,0 @@
-SELECT * FROM `cruz-2114392-dayane-lang`.professores_labenu;
