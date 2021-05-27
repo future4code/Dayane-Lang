@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
-import knex, { Knex } from "knex";
+import knex from "knex";
 import dotenv from "dotenv";
 import connection from "./connection"
 
@@ -11,9 +11,6 @@ const app: Express = express();
 
 app.use(express.json());
 app.use(cors())
-
-// conexão com o banco utilizando knex e dotenv:
-
 
 
 

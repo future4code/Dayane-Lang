@@ -1,6 +1,6 @@
 ### EXERCÍCIO 01
 
-a)- Retorna um array com dados e metadados, cujo primeiro elemento desse array Que foi selecionado.
+a)- Retorna um array com dados e metadados.
 
 ****************************************
 
