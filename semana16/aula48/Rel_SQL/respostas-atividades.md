@@ -18,14 +18,46 @@ c)  INSERT INTO Rating (id, comment, rate, movies_id)
 
 d) ALTER TABLE Movie DROP COLUMN rating;
 
-e) ALTER TABLE Movies
-   DROP FOREIGN KEY movies_id;
+e) DELETE FROM Rating WHERE rating.Movies = 4;
 
-   Error Code: 1091. Can't DROP 'movies_id'; check that column/key exists
+   Error Code: 1054. Unknown column 'rating.Movies' in 'where clause'
 
-   O erro informou que não é possível deletar um filme.
+   O erro informou que não é possível deletar tal informação porQue a coluna não foi encontrada.
 
   ******************************************************* 
 # EXERCÍCIO 2
 
-a) 
+a) CREATE TABLE MovieCast (
+	movie_id VARCHAR(255),
+	actor_id VARCHAR(255),
+    FOREIGN KEY (movie_id) REFERENCES Movies(id),
+    FOREIGN KEY (actor_id) REFERENCES Actor(id)
+   );
+
+   Essa tabela foi relacionada com a tabela Movies e Actor, sendo movie_id e actor_id chaves estrangeiras, e os ids de cada tabela são as chaves primárias. Dessa forma, a tabela apresentará o ator Que trabalhou em cada filme, o Que possibilita um ator ter trabalhado em mais de um filme.
+
+b)  INSERT INTO MovieCast(movie_id, actor_id)
+    VALUES
+    ("001", "004"),
+    ("001", "002"),
+    ("004", "006"),
+    ("003", "002"),
+    ("004", "003"),
+    ("002", "005"),
+    ("002", "007");
+
+c)  INSERT INTO MovieCast(movie_id, actor_id)
+    VALUES
+    ("008", "004");
+
+    Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`cruz-2114392-dayane-lang`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movies` (`id`))4
+
+    O erro informou Que não é possível adicionar ou atualizar uma linha filha pelo fato da chave estrangeira não corresponder a chave primária(id) da tabela Movies.
+
+d) DELETE FROM Actor WHERE id="001";
+    Com essa Query na tabela MovieCast consegui deletar o ator com id = 0001
+
+  ******************************************************* 
+# EXERCÍCIO 3
+
+a)
