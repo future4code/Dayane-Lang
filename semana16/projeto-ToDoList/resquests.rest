@@ -1,0 +1,11 @@
+### createUser
+
+POST  http://localhost:3003/user/createUser
+Content-Type: application/json
+
+{
+	"name": "Astro Dev",
+	"nickname": "astrodev",
+	"email": "astro@dev.com"
+}
+
