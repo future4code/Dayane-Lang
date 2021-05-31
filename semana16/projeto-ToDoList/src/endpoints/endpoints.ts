@@ -2,7 +2,8 @@ import express, { Router, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { v4 as uuidv4 } from 'uuid';
-import { User, Task  } from '../types/types';
+
+import {Task, User}   from '../types/types';
 import { createUser, createTask } from '../queries/queries';
 
 
@@ -13,7 +14,7 @@ router.use(cors())
 
 dotenv.config()
 
-const { formatStringDate} = require('../utils/utils')
+const { formatStringDate } = require("../utils/utils")
 
 router.post('/user/createUser', async (req: Request, res: Response) => {
 
@@ -33,7 +34,7 @@ router.post('/user/createUser', async (req: Request, res: Response) => {
   
        await createUser(newUser)
    
-       res.status(200).send("O usuário criado com sucesso!")
+       res.status(200).send("Usuário criado com sucesso!")
   
      } catch (error) {
   
@@ -47,17 +48,31 @@ router.post('/task/createTask', async (req: Request, res: Response) => {
 
     try {
  
-      if (!req.body.title || !req.body.description || !req.body.limit_date || !req.body.creator_user_id || !req.body.status) {
+      if (
+        !req.body.title || 
+        !req.body.description || 
+        !req.body.limit_date || 
+        !req.body.author_id || 
+        !req.body.status
         
-       throw new Error("Título, descrição, data limite, status ou id do criador não informados!")
+      ) {
+        
+       throw new Error("Título, descrição, data limite, status ou id não informados!")
  
       }
  
-      const {title, description, limit_date, creator_user_id, status} = req.body
+      const {title, description, limit_date, author_id, status} = req.body
  
       const id = uuidv4()
     
-      const newTask: Task = {id, title: title, description: description, limit_date: await formatStringDate(limit_date), creator_user_id: creator_user_id, status: status}
+      const newTask: Task = {
+          id, title: title, 
+          description: description, 
+          limit_date: 
+        await formatStringDate(limit_date), 
+          author_id: author_id, 
+          status: status
+      }
       await createTask(newTask)
   
       res.status(200).send("Tarefa criada com sucesso!")

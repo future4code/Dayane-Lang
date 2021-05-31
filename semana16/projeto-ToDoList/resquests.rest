@@ -9,3 +9,76 @@ Content-Type: application/json
 	"email": "astro@dev.com"
 }
 
+
+
+### createUser
+
+POST  http://localhost:3003/user/createUser
+Content-Type: application/json
+
+{  
+    "name": "teste1",
+    "nickname": "testezinho",
+    "email": "teste@email.com"
+}
+
+
+### editUser
+
+PUT  http://localhost:3003/user/edit/1610856313475
+Content-Type: application/json
+
+{  
+    "name": "Dayane",
+    "nickname": "day"
+}
+
+
+### createTask
+
+POST http://localhost:3003/task/createTask
+Content-Type: application/json
+
+{   
+    "title": "Teste",
+    "description": "Será que um dia irei aprender tudo meu Deus?.",
+    "status": "To_Do",
+    "limit_date": "16/07/2021",
+    "author_id": ""
+}
+
+
+### addAssigneesTask
+
+POST  http://localhost:3003/task/assignees
+Content-Type: application/json
+
+{  
+   "task_id": "",
+	"assignee_id": "001"
+}
+
+
+### getUserById
+
+GET http://localhost:3003/user/
+
+
+### getTaskById
+
+GET http://localhost:3003/task/
+
+
+### getAllUsers
+
+GET http://localhost:3003/users/all
+
+
+### getTasksCreatedUserId
+
+GET http://localhost:3003/tasks?creatorUserId
+
+
+### searchUserByNickname
+
+GET http://localhost:3003/user?nickname

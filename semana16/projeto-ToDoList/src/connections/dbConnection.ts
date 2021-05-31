@@ -1,20 +1,12 @@
 import knex from 'knex'
-import { Knex } from 'knex'
 import dotenv from 'dotenv';
-
 
 dotenv.config();
 
 //APAGAR ANTES DE DAR PUSH
 
 
-
-
-
-
-
-
-export const connection: Knex = knex({
+export const connection = knex({
     
 
  client: "mysql",

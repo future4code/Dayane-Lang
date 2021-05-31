@@ -6,32 +6,33 @@ const createTables = async (): Promise<any> => {
   try {
    
     await connection.raw(`
-      CREATE TABLE Users (
-        id VARCHAR(255) PRIMARY KEY, 
-        name VARCHAR(255) NULL, 
-        nickname VARCHAR(255) UNIQUE NOT NULL, 
-        email VARCHAR(255) UNIQUE NOT NULL
+      CREATE TABLE todolist_users (
+        id VARCHAR(64) PRIMARY KEY, 
+				name VARCHAR(64) NOT NULL, 
+				nickname VARCHAR(64) UNIQUE NOT NULL, 
+				email VARCHAR(64) UNIQUE NOT NULL
       );
     `)
 
     await connection.raw(`
-      CREATE TABLE Tasks (           
-        id VARCHAR(255) PRIMARY KEY, 
-        title VARCHAR(255) NOT NULL, 
-        description TEXT NOT NULL, 
-        status VARCHAR(255) NOT NULL DEFAULT "to_do",
-        limit_date DATE NOT NULL,
-        creator_user_id varchar(255) NOT NULL,
-        FOREIGN KEY (creator_user_id) REFERENCES Users(id)
+      CREATE TABLE todolist_tasks (           
+        id VARCHAR(64) PRIMARY KEY, 
+				title VARCHAR(64) NOT NULL, 
+				description VARCHAR(1024) DEFAULT "No description provided",
+        status Enum("TO_DO", "DOING", "DONE") DEFAULT "To_Do",
+				limit_date DATE NOT NULL,
+				author_id varchar(64) NOT NULL,
+				FOREIGN KEY (author_id) REFERENCES todolist_users(id)
       );
     `)
     
     await connection.raw(`
-      CREATE TABLE AccountableTask (
-        task_id VARCHAR(255),
-        responsible_user_id VARCHAR(255),
-        FOREIGN KEY (task_id) REFERENCES Tasks(id),
-        FOREIGN KEY (responsible_user_id) REFERENCES Users(id)
+      CREATE TABLE todolist_assignees (
+        task_id VARCHAR(64),
+				assignee_id VARCHAR(64),
+        PRIMARY KEY (task_id, assignee_id),
+				FOREIGN KEY (task_id) REFERENCES todolist_tasks(id),
+				FOREIGN KEY (assignee_id) REFERENCES todolist_users(id)
         ); 
     `)
 

@@ -1,5 +1,5 @@
 export enum Status {
-    TODO = "to_do",
+    TODO = "To_Do",
     DOING = "doing",
     DONE = "done"
 }
@@ -17,10 +17,10 @@ export type Task = {
     description: string,
     status: Status,
     limit_date: Date,
-    creator_user_id: string,
+    author_id: string,
 }
 
-export type TaskRelations = {
+export type Assignee = {
     task_id: number,
     user_id: number
  } 
