@@ -1,4 +1,3 @@
-
     CREATE TABLE Movies ( 
     id VARCHAR(255) PRIMARY KEY, 
     title VARCHAR(255) NOT NULL UNIQUE, 
@@ -44,3 +43,4 @@ SELECT * FROM Movies WHERE release_date < "2021/01/11";
 SELECT * FROM Movies WHERE release_date < "2021/01/11" AND (title LIKE "Flor" OR synopsis LIKE "%Flor%") AND rating > 7;
 
 SELECT * FROM `cruz-2114392-dayane-lang`.Movies;
+
