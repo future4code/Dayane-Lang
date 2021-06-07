@@ -1,5 +1,5 @@
-import { v4 } from "uuid"
+import { v4 } from 'uuid';
 
-const id = v4();
-
-console.log("Generated Id: ", id);
+export function generate(): string {
+    return v4()
+}
