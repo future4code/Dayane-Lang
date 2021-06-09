@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { selectUserById } from '../data/selectUserById';
+import selectUserById from '../data/selectUserById';
 import { authenticationData } from '../types/authenticationData';
 import { getTokenData } from '../services/authenticator';
 
@@ -23,7 +23,7 @@ export default async function getUserById(
             throw new Error("Usuário não encontrado!")
         }
 
-        res.status(200).send({message: "Success", id: user.id, email: user.email})
+        res.status(200).send({message: "Success", id: user.id, email: user.email, role: user.role})
 
     } catch (error) {
 

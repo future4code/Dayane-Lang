@@ -3,68 +3,64 @@
 
 # EXERCÍCIO 1
 
-a)As ids podem possuir letras e números, portanto, o fato delas serem declaradas como uma string aumentará a segurança de cada um e tornará seus ids únicos.
-Uma string pode conter números e letras juntos, aumentando a segurança e tornando os ids únicos.
+a) -Round é um valor para definir o tempo, ou seja, um fator cost. Há uma relação com a requisição: Quanto maior o valor que damos ao cost, mais lenta esta será. Quanto maior o round, melhor será por motivos de segurança. Ex: 12 que é um valor padrão.
+- Salt é um dado aleatório gerado pelo bcrypt (um input adicional a mensagem Que será encriptada). 
 
-b)
-    import { v4 } from "uuid";
+b) Resposta no arquivo hashManager.ts na pasta services.
 
-        export function generateId(): string {
-        return v4();
+c)
+    export const compare = async(
+        plainText: string, 
+        cypherText: string
+        ): Promise<boolean> => {
+        return bcrypt.compare(plainText, cypherText)
     }
 
 -----
 
 # EXERCÍCIO 2    
 
-a)  O userTableName está chamando a tabela 'User'.
-    A função connection é referente aos dados de acceso do criador do código da aplicação ao bando de dados, que estão sendo guardados no arquivo .env.
-    A query createUser está inserindo na tabela 'USer' id, email e password.
+a)  O primeiro endpoint Que deve ser modificado é o de Cadastro, pois a senha criada será criptografada primeiramente, para Que possamos em seguida modificar o endpoint de Login. Dessa maneira é possível comparar a senha informada pelo usuário no ato do cadastro com a senha informada ao realizar o login.
 
 
-b)  CREATE TABLE `Users_aula51` (
-        `id` varchar(64) PRIMARY KEY NOT NULL UNIQUE,
-        `email` varchar(64) NOT NULL,
-        `password` varchar(255) NOT NULL
-    );
+b) 
+    if (role !== USER_ROLES.ADMIN && role !== USER_ROLES.NORMAL) {
+                throw new Error(`"role" deve ser "NORMAL" ou "ADMIN"`)
+            }
 
+c) 
+       const passwordIsCorrect: boolean = await compare(
+            input.password,
+            users.password
+        )
 
-c)  export const insertUser = async ( user: users ) => {
-		await connection
-	    .insert({
-	      id: user.id,
-	      email: user.email,
-	      password: user.password,
-	    })
-	    .into(userTableName);
-	};
+d) Não  há necessidade de modificar o endpoint 'user/profile', pois esse endpoint utiliza o token que resultou no momento do login e é conferido no header.
+
 
 -----
 # EXERCÍCIO 3
 
-a) O termo "as string" informa Que o valor recebido será uma string e não Qualuer valor,como undefined.
+a) 
+    ALTER TABLE Users_aula51
+    ADD role enum('NORMAL','ADMIN') DEFAULT 'NORMAL';
 
-b)      import * as jwt from  'jsonwebtoken';
-        import { authenticationData } from '../types/authenticationData';
+b) export function getTokenData(token: string): authenticationData{
+    const payload = jwt.verify(token, process.env.JWT_KEY as string) as authenticationData
+        return {
+            id: payload.id,
+            role: payload.role
+            }
+    }
 
+c)  const token = generateToken({
+            id,
+            role: req.body.role
+         })
 
-        export function generateToken(id: string): string {
-
-            const token: string = jwt.sign({id},
-                process.env.JWT_KEY as string,
-                {expiresIn: "1d"})
-
-            return token
-        }
-
-       
-
-
-    **authenticationData.ts** - dentro da pasta type Que contem um type  para representar o input dessa função:
-
-        export type authenticationData = {
-            id: string
-        }
+d) const token = generateToken({
+            id: users.id,
+            role: users.role
+         })
 
 -----
 
@@ -271,35 +267,14 @@ a)
         }
         
 b)
-        export default async function getUserById(
-            req: Request, 
-            res: Response
-            ): Promise<any> {
-            
-            try {
+        if(!user) {
 
-                const token: string = req.headers.authorization as string
-                const tokenData: authenticationData = getTokenData(token)
+            res.statusCode = 404
 
-                const user = await selectUserById(tokenData.id)
-
-                if(!user) {
-
-                    res.statusCode = 404
-
-                    throw new Error("Usuário não encontrado!")
-                }
-
-                res.status(200).send({message: "Success", id: user.id, email: user.email})
-
-            } catch (error) {
-
-                res.status(400).send({
-
-                    message: error.message || error.sqlMessage
-                })
-            }
+            throw new Error("Usuário não encontrado!")
         }
+
+        res.status(200).send({message: "Success", id: user.id, email: user.email, role: user.role})
 
 ----
 

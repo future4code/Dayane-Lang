@@ -1,14 +1,14 @@
-import { Request, Response } from 'express'
-import { selectUserByEmail } from '../data/selectUserByLogin'
-import { generateToken } from '../services/authenticator'
-import { loginInput } from '../types/loginInput'
+import { compare } from 'bcryptjs';
+import { Request, Response } from 'express';
+import selectUserByEmail from '../data/selectUserByLogin';
+import { generateToken } from '../services/authenticator';
+import { loginInput } from '../types/loginInput';
 
 
-
-export default async function loginUser(
+export default async function createUser(
     req: Request, 
-    res: Response
-    ): Promise<void> {
+    res: Response) 
+    {
 
     const input: loginInput = {
         email: req.body.email,
@@ -17,15 +17,15 @@ export default async function loginUser(
 
     try {
 
-        
+
         if (!input.email || input.email.indexOf("@") === -1) {
 
           throw new Error("E-mail inválido!")
         }
 
-        const user = await selectUserByEmail(input.email)
+        const users = await selectUserByEmail(input.email)
 
-        if(!user) {
+        if(!users) {
 
             res.statusCode = 404
 
@@ -39,14 +39,23 @@ export default async function loginUser(
         }
 
 
-        if(user.password !== input.password) {
+        const passwordIsCorrect: boolean = await compare(
+            input.password,
+            users.password
+        )
+   
+        if (!passwordIsCorrect) {
 
             res.statusCode = 401
 
-            throw new Error("Senha inválida!")
+            throw new Error("Senha incorreta!")
         }
+       
 
-        const token = generateToken(user.id)
+        const token = generateToken({
+            id: users.id,
+            role: users.role
+         })
 
 
         res
@@ -60,4 +69,4 @@ export default async function loginUser(
             message: error.message || error.sqlMessage
         })
     }
-}
+} 

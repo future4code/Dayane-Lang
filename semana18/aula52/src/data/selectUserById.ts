@@ -1,21 +1,13 @@
 import { connection } from '../index'
-import { userTableName } from '../services/tablesDataBase'
 
 
-export const selectUserById= async(id: string): Promise<any> => {
-
-  try {
-
-    const result = await connection
+export default async function selectUserById(id: string) {
+  
+  const result = await connection
       .select("*")
-      .from(userTableName)
+      .from("Users_aula51")
       .where({ id })
- 
-    return result[0]
 
-  } catch (error) {
+      return result[0]
 
-    throw new Error(error.message || error.sqlMessage)
-  }
-   
-}
+} 

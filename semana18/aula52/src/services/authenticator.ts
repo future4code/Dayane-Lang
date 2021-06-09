@@ -2,16 +2,26 @@ import * as jwt from  'jsonwebtoken';
 import { authenticationData } from '../types/authenticationData';
 
 
-export function generateToken(id: string): string {
+export function generateToken(input: authenticationData): string {
 
-    const token: string = jwt.sign({id},
+    const expiresIn = "1y"
+
+    const token: string = jwt.sign({ id: input, role: input.role },
         process.env.JWT_KEY as string,
-        {expiresIn: "1d"})
+        { expiresIn })
 
     return token
 }
 
 export function getTokenData(token: string): authenticationData{
-    const payload = jwt.verify(token, process.env.JWT_KEY!)
-    return payload as authenticationData;
+    const payload = jwt.verify(token, process.env.JWT_KEY as string) as authenticationData
+    return {
+        id: payload.id,
+        role: payload.role
+     }
 }
+  
+
+
+    
+

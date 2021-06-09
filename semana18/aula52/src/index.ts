@@ -6,6 +6,7 @@ import { AddressInfo } from "net";
 import  createUser from "./endpoints/createUser";
 import loginUser from "./endpoints/loginUser";
 import getUserById  from "./endpoints/getUserById";
+import deleteUser from "./endpoints/deleteUser";
 
 dotenv.config();
 
@@ -28,7 +29,7 @@ app.use(cors());
 app.post('/user/signup', createUser)
 app.post('/user/login', loginUser)
 app.get('/user/profile', getUserById)
-
+app.delete('/user/delete', deleteUser)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
@@ -39,7 +40,3 @@ const server = app.listen(process.env.PORT || 3003, () => {
        console.error(`Failure upon starting server.`);
     }
 });
-
-
-
-

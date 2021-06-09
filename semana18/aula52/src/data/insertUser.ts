@@ -1,5 +1,4 @@
 import { connection } from '../index';
-import { userTableName } from '../services/tablesDataBase';
 import { users } from '../types/users';
 
 
@@ -10,7 +9,7 @@ import { users } from '../types/users';
 	      email: user.email,
 	      password: user.password,
 	    })
-	    .into(userTableName);
+	    .into('Users_aula51');
 	};
 
 

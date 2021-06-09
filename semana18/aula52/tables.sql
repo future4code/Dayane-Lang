@@ -3,3 +3,6 @@ CREATE TABLE `Users_aula51` (
   `email` varchar(64) NOT NULL,
   `password` varchar(255) NOT NULL
 );
+
+ALTER TABLE Users_aula51
+ADD role enum('NORMAL','ADMIN') DEFAULT 'NORMAL';
