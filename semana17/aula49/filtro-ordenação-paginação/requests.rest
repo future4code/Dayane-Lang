@@ -1,0 +1,37 @@
+### getAllUsers
+
+GET http://localhost:3003/users/all
+
+
+
+### getUserByName
+
+GET http://localhost:3003/user/searchName?name=soter
+
+
+### getUserByType
+
+GET http://localhost:3003/user/cx
+
+
+
+### getUserByNameOrType
+
+GET http://localhost:3003/users/name
+
+
+### getFiveUsers
+
+GET http://localhost:3003/users?limit=5
+
+
+
+### getUsersWithAllFilters
+
+GET http://localhost:3003/users/all/search?name=&&type=&&orderBy=&&limit=&&offset=
+
+
+
+
+
+
