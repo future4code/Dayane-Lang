@@ -1,0 +1,41 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Dayane Lang", 
+   "nickname": "day", 
+   "email": "daylangdevtestes@gmail.com" ,
+   "password": "macarrao89",
+   "role": "NORMAL"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "alice@alice.com" ,
+   "password": "0102040506"
+}
+
+###
+
+
+PUT http://localhost:3003/user/edit
+Content-Type: application/json
+Authorization: 
+
+{
+   "name": "Alice" 
+}
+
+### RESET PASSWORD
+
+POST http://localhost:3003/user/password/reset
+Content-Type: application/json
+
+{
+   "email": "daylangdevtestes@gmail.com"
+}

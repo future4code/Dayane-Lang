@@ -7,6 +7,9 @@ import  createUser from "./endpoints/createUser";
 import loginUser from "./endpoints/loginUser";
 import getUserById  from "./endpoints/getUserById";
 import deleteUser from "./endpoints/deleteUser";
+import { getAddressInfo } from "./endpoints/getAddressInfo";
+import editUser from "./endpoints/editUser";
+import resetPassword from "./endpoints/resetPassword";
 
 dotenv.config();
 
@@ -30,7 +33,9 @@ app.post('/user/signup', createUser)
 app.post('/user/login', loginUser)
 app.get('/user/profile', getUserById)
 app.delete('/user/delete', deleteUser)
-
+app.get('/address/:cep', getAddressInfo)
+app.put('/user/edit', editUser),
+app.post('/user/password/reset', resetPassword)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

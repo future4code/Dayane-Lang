@@ -3,7 +3,7 @@ import { insertUser } from '../data/insertUser';
 import { generate } from '../services/idGenerator';
 import { generateToken } from '../services/authenticator';
 import { users } from '../types/users';
-import { hash } from '../services/hashManager'
+import { createHash } from '../services/hashManager'
 import { USER_ROLES } from '../types/users'
 
 
@@ -37,7 +37,7 @@ export default async function createUser(
  
         const id: string = generate()
 
-        const cypherPassword: string = await hash(password)
+        const cypherPassword: string = await createHash(password)
  
         const newUser: users = {
             id,

@@ -1,8 +1,5 @@
 import { connection } from '../index'
 
-
-
-
 const createTable = async(): Promise<void> => {
 
     try {
@@ -19,7 +16,7 @@ const createTable = async(): Promise<void> => {
             state VARCHAR(255),
             cep VARCHAR(255) NOT NULL,
             user_id VARCHAR(64) UNIQUE NOT NULL,
-            FOREIGN KEY (user_id) REFERENCES Users_aula50(id)
+            FOREIGN KEY (user_id) REFERENCES Users_aula51(id)
             );  
         
         `)
