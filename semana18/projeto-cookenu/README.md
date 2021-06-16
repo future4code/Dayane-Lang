@@ -137,8 +137,8 @@ Body
 
 {
 	"id": "id da receita",
-	"title": "Ovo Frito",
-	"description": "Pega o ovo, põe na frigideira e reza!"
-	"cratedAt": "31/12/2020"
+	"title": "Miojo com queijo",
+	"description": "Ferva água em uma panela, coloque o miojo e aguarde 3min. Após coloca fatias de queijo e pronto!"
+	"cratedAt": "11/06/2021"
 }
 `````
