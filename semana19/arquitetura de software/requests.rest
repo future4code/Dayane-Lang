@@ -1,0 +1,32 @@
+### createUser
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "email": "teste@email.com",
+    "password": "12345678",
+    "role": "NORMAL"
+}
+
+
+
+### login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "lilica@email.com",
+    "password": "12345678"
+}
+
+
+
+### getAllUsers
+GET http://localhost:3003/users/all
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzMjNjZWU0LWY4N2MtNDc2NS04NmJkLWQ2MzEyNGVjMzA3MSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYxMjIwNjU1MCwiZXhwIjoxNjQzNzY0MTUwfQ.EbaufbZWJOEqLfzZouddXKzwkjalWVJ65tiWg9a6SBQ
+
+
+### getAllUsers
+DELETE http://localhost:3003/user/delete/816725e0-3a09-4de0-85a1-a6f5edc30372
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBmNDk1OTcwLTMyZGUtNGUyZS05YjVlLTEwOTk0OTJmZjlhYiIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2MTIyMTU2MjksImV4cCI6MTY0Mzc3MzIyOX0.UO-UKKMxpIgN85TUhtXqUx8VT5F-1-AtzuoZqTbdxJM
