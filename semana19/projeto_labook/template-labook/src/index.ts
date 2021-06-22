@@ -1,5 +1,3 @@
-/**************************** IMPORTS ******************************/
-
 import express, { Express, Request, Response } from "express"
 import cors from "cors"
 import knex from "knex"
@@ -9,11 +7,11 @@ import * as bcrypt from "bcryptjs"
 import { v4 } from "uuid"
 import Knex from "knex"
 
-/**************************** CONFIG ******************************/
+/*CONFIG*/
 
 dotenv.config()
 
-export const connection: Knex = knex({
+export const connection = knex({
    client: "mysql",
    connection: {
       host: process.env.DB_HOST,
@@ -29,7 +27,7 @@ const app: Express = express()
 app.use(express.json())
 app.use(cors())
 
-/**************************** TYPES ******************************/
+/*TYPES*/
 
 type authenticationData = {
    id: string
@@ -56,7 +54,7 @@ type post = {
    authorId: string
 }
 
-/**************************** SERVICES ******************************/
+/* SERVICES */
 
 const generateId = (): string => v4()
 
@@ -97,7 +95,7 @@ const compare = async (
    return bcrypt.compare(plainText, cypherText)
 }
 
-/**************************** ENDPOINTS ******************************/
+/* ENDPOINTS */
 
 app.post('/users/signup', async (req: Request, res: Response) => {
    try {
@@ -251,7 +249,7 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
    }
 })
 
-/**************************** SERVER INIT ******************************/
+/* SERVER INIT */
 
 app.listen(3003, () => {
    console.log("Server running on port 3003")
