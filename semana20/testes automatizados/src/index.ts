@@ -1,9 +1,10 @@
 import knex from 'knex'
 import { config } from 'dotenv'
 
+
 config()
 
-export const isEven = (integer: number): any => { }
+
 
 export const connection = knex({
    client: "mysql",
@@ -16,3 +17,6 @@ export const connection = knex({
       multipleStatements: true
    },
 });
+
+
+
